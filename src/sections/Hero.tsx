@@ -7,10 +7,32 @@ const HeroBackground3D = lazy(() => import('../components/HeroBackground3D'));
 
 const rotatingWords = ['tus Ventas.', 'tu Marca.', 'tus Leads.', 'tu Alcance.', 'tu Éxito.'];
 
+function AnimatedStat({ end, suffix, trigger }: { end: number; suffix: string; trigger: boolean }) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!trigger) return;
+    let current = 0;
+    const steps = 40;
+    const increment = end / steps;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.round(current));
+      }
+    }, 1500 / steps);
+    return () => clearInterval(timer);
+  }, [trigger, end]);
+  return <>{count}{suffix}</>;
+}
+
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [wordIndex, setWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [statsVisible, setStatsVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,6 +44,11 @@ export default function Hero() {
     }, 3200);
     return () => clearInterval(interval);
   }, [wordIndex]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setStatsVisible(true), 2200);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -112,13 +139,15 @@ export default function Hero() {
 
           <div className="hero-stats flex items-center gap-10 flex-wrap">
             {[
-              { value: '3x', label: 'Más Conversiones' },
-              { value: '7 Días', label: 'Entrega Garantizada' },
-              { value: '100%', label: 'Satisfacción' },
+              { end: 3, suffix: 'x', label: 'Más Conversiones' },
+              { end: 7, suffix: ' Días', label: 'Entrega Garantizada' },
+              { end: 100, suffix: '%', label: 'Satisfacción' },
             ].map((stat) => (
               <div key={stat.label} className="relative group">
                 <div className="absolute -inset-3 bg-cyan-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <p className="relative font-mono text-cyan-400 font-bold text-sm tracking-wider">{stat.value}</p>
+                <p className="relative font-mono text-cyan-400 font-bold text-sm tracking-wider">
+                  <AnimatedStat end={stat.end} suffix={stat.suffix} trigger={statsVisible} />
+                </p>
                 <p className="relative text-slate-500 text-xs mt-0.5">{stat.label}</p>
               </div>
             ))}

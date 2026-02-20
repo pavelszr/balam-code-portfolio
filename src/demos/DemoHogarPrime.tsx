@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Search, Bed, Bath, Maximize, Heart, Home, Building, TreePine, ArrowRight, Shield, Users, Key, ChevronRight } from 'lucide-react';
+import { Phone, MapPin, Search, Bed, Bath, Maximize, Heart, Home, Building, TreePine, ArrowRight, Shield, Users, Key, ChevronRight, Menu, X } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { WhatsAppIcon } from '../components/SocialIcons';
 import { BACLogo, FicohsaLogo, DaviviendaLogo, CemcolLogo, InversaLogo } from '../components/BrandLogos';
@@ -21,6 +21,7 @@ const properties = [
     beds: 3, baths: 2, area: '180 m²',
     image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80',
     featured: true,
+    desc: 'Hermosa casa residencial con acabados de lujo, jardín amplio y cochera para 2 vehículos. Ubicada en una de las colonias más exclusivas de San Pedro Sula con seguridad 24/7.',
   },
   {
     title: 'Apartamento Torre Platinum',
@@ -30,6 +31,7 @@ const properties = [
     beds: 2, baths: 2, area: '95 m²',
     image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80',
     featured: false,
+    desc: 'Moderno apartamento en torre de lujo con amenidades completas: gimnasio, piscina y área social. Vista panorámica a la ciudad y acceso controlado.',
   },
   {
     title: 'Casa Campestre Valle de Ángeles',
@@ -39,6 +41,7 @@ const properties = [
     beds: 4, baths: 3, area: '280 m²',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
     featured: true,
+    desc: 'Espectacular casa campestre rodeada de naturaleza con terraza panorámica, chimenea y acabados en madera. Ideal para familias que buscan tranquilidad cerca de la ciudad.',
   },
   {
     title: 'Terreno Residencial El Pedregal',
@@ -48,6 +51,7 @@ const properties = [
     beds: 0, baths: 0, area: '500 m²',
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80',
     featured: false,
+    desc: 'Terreno plano en residencial cerrada con todos los servicios básicos disponibles. Ideal para construir la casa de tus sueños en una zona de alta plusvalía.',
   },
   {
     title: 'Penthouse Lomas del Mayab',
@@ -57,6 +61,7 @@ const properties = [
     beds: 3, baths: 2, area: '145 m²',
     image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80',
     featured: true,
+    desc: 'Penthouse de lujo con terraza privada, doble altura y acabados premium. Ubicado en una de las zonas más cotizadas de Tegucigalpa con vista espectacular.',
   },
   {
     title: 'Casa Moderna Res. Maya',
@@ -66,6 +71,7 @@ const properties = [
     beds: 4, baths: 3, area: '220 m²',
     image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80',
     featured: false,
+    desc: 'Casa con diseño contemporáneo, espacios abiertos y iluminación natural. Cuenta con piscina privada, área de BBQ y sistema de domótica inteligente.',
   },
 ];
 
@@ -88,6 +94,8 @@ export default function DemoHogarPrime() {
   const [favorites, setFavorites] = useState<string[]>([]);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState<typeof properties[0] | null>(null);
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
@@ -152,11 +160,28 @@ export default function DemoHogarPrime() {
               <WhatsAppIcon className="w-4 h-4" />
               WhatsApp
             </a>
-            <a href="#contacto" className="px-6 py-2 border text-xs tracking-widest uppercase transition-all duration-700 hover:bg-white hover:text-slate-900" style={{ borderColor: '#D4A853', color: scrolled ? '#1E293B' : '#D4A853' }}>
+            <a href="#contacto" className="hidden sm:inline-block px-6 py-2 border text-xs tracking-widest uppercase transition-all duration-700 hover:bg-white hover:text-slate-900" style={{ borderColor: '#D4A853', color: scrolled ? '#1E293B' : '#D4A853' }}>
               Contactar
             </a>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`md:hidden p-2 transition-colors duration-700 ${scrolled ? 'text-slate-800' : 'text-white'}`}>
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
+        {mobileMenuOpen && (
+          <div className={`md:hidden px-6 pb-4 ${scrolled ? 'bg-white/95 backdrop-blur-xl' : 'bg-slate-900/90 backdrop-blur-xl'}`}>
+            <div className="flex flex-col gap-4 py-4 border-t" style={{ borderColor: scrolled ? '#e2e8f0' : 'rgba(255,255,255,0.1)' }}>
+              {['propiedades', 'servicios', 'testimonios', 'contacto'].map(item => (
+                <a key={item} href={`#${item}`} onClick={() => setMobileMenuOpen(false)} className={`text-sm font-light tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-slate-600' : 'text-white/80'}`}>
+                  {item}
+                </a>
+              ))}
+              <a href="https://wa.me/50427890123" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-sm font-light tracking-[0.2em] uppercase" style={{ color: '#D4A853' }}>
+                <WhatsAppIcon className="w-4 h-4" /> WhatsApp
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -258,7 +283,7 @@ export default function DemoHogarPrime() {
             </div>
           </motion.div>
 
-          <div className="flex justify-center gap-10 mb-16">
+          <div className="flex justify-center gap-4 sm:gap-10 mb-16 overflow-x-auto pb-2">
             {filters.map((f) => (
               <button
                 key={f.name}
@@ -299,50 +324,51 @@ export default function DemoHogarPrime() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.0, ease: 'easeOut' as const }}
-                    className="relative group overflow-hidden"
+                    className="relative group overflow-hidden cursor-pointer"
+                    onClick={() => setSelectedProperty(prop)}
                   >
-                    <div className="aspect-[16/9] sm:aspect-[21/9] overflow-hidden">
+                    <div className="aspect-[3/4] sm:aspect-[16/9] lg:aspect-[21/9] overflow-hidden">
                       <img src={prop.image} alt={prop.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent sm:from-slate-900/80 sm:via-slate-900/20" />
                     <button
-                      onClick={() => toggleFavorite(prop.title)}
-                      className="absolute top-6 right-6 p-3 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all z-10"
+                      onClick={(e) => { e.stopPropagation(); toggleFavorite(prop.title); }}
+                      className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 sm:p-3 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all z-10"
                     >
-                      <Heart className={`w-5 h-5 transition-colors ${favorites.includes(prop.title) ? 'text-red-400 fill-red-400' : 'text-white/70'}`} />
+                      <Heart className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${favorites.includes(prop.title) ? 'text-red-400 fill-red-400' : 'text-white/70'}`} />
                     </button>
                     {prop.featured && (
-                      <span className="absolute top-6 left-6 px-4 py-1.5 text-[10px] tracking-[0.3em] uppercase z-10" style={{ backgroundColor: '#D4A853', color: '#1E293B' }}>
+                      <span className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] tracking-[0.3em] uppercase z-10" style={{ backgroundColor: '#D4A853', color: '#1E293B' }}>
                         Destacada
                       </span>
                     )}
-                    <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
+                    <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 lg:p-12">
                       <div className="max-w-2xl">
-                        <p className="text-xs tracking-[0.2em] uppercase text-white/60 mb-2">{prop.type}</p>
-                        <h3 className="font-serif text-2xl sm:text-4xl text-white mb-3">{prop.title}</h3>
-                        <p className="text-white/60 font-light flex items-center gap-2 text-sm mb-4">
-                          <MapPin className="w-3.5 h-3.5" /> {prop.location}
+                        <p className="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white/60 mb-1.5 sm:mb-2">{prop.type}</p>
+                        <h3 className="font-serif text-xl sm:text-3xl lg:text-4xl text-white mb-2 sm:mb-3">{prop.title}</h3>
+                        <p className="text-white/60 font-light flex items-center gap-2 text-xs sm:text-sm mb-3 sm:mb-4">
+                          <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> {prop.location}
                         </p>
-                        <div className="flex items-center gap-6 mb-6">
+                        <div className="flex items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
                           {prop.beds > 0 && (
-                            <span className="flex items-center gap-2 text-white/70 text-sm font-light">
-                              <Bed className="w-4 h-4" /> {prop.beds} Hab.
+                            <span className="flex items-center gap-1.5 sm:gap-2 text-white/70 text-xs sm:text-sm font-light">
+                              <Bed className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {prop.beds} Hab.
                             </span>
                           )}
                           {prop.baths > 0 && (
-                            <span className="flex items-center gap-2 text-white/70 text-sm font-light">
-                              <Bath className="w-4 h-4" /> {prop.baths} Baños
+                            <span className="flex items-center gap-1.5 sm:gap-2 text-white/70 text-xs sm:text-sm font-light">
+                              <Bath className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {prop.baths} Baños
                             </span>
                           )}
-                          <span className="flex items-center gap-2 text-white/70 text-sm font-light">
-                            <Maximize className="w-4 h-4" /> {prop.area}
+                          <span className="flex items-center gap-1.5 sm:gap-2 text-white/70 text-xs sm:text-sm font-light">
+                            <Maximize className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> {prop.area}
                           </span>
                         </div>
-                        <div className="flex items-center gap-8">
-                          <span className="font-serif text-2xl sm:text-3xl text-white">{prop.price}</span>
-                          <a href="#contacto" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase hover:opacity-70 transition-opacity" style={{ color: '#D4A853' }}>
-                            Me interesa <ChevronRight className="w-3 h-3" />
-                          </a>
+                        <div className="flex items-center gap-6 sm:gap-8">
+                          <span className="font-serif text-xl sm:text-2xl lg:text-3xl text-white">{prop.price}</span>
+                          <span className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase" style={{ color: '#D4A853' }}>
+                            Ver detalles <ChevronRight className="w-3 h-3" />
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -360,12 +386,13 @@ export default function DemoHogarPrime() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.0, delay: j * 0.15, ease: 'easeOut' as const }}
-                        className="group"
+                        className="group cursor-pointer"
+                        onClick={() => setSelectedProperty(p!)}
                       >
                         <div className="relative aspect-[4/3] overflow-hidden mb-6">
                           <img src={p!.image} alt={p!.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
                           <button
-                            onClick={() => toggleFavorite(p!.title)}
+                            onClick={(e) => { e.stopPropagation(); toggleFavorite(p!.title); }}
                             className="absolute top-4 right-4 p-2.5 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all"
                           >
                             <Heart className={`w-4 h-4 transition-colors ${favorites.includes(p!.title) ? 'text-red-400 fill-red-400' : 'text-white/70'}`} />
@@ -380,7 +407,7 @@ export default function DemoHogarPrime() {
                           </div>
                         </div>
                         <p className="text-xs tracking-[0.2em] uppercase text-slate-400 mb-2">{p!.type}</p>
-                        <h3 className="font-serif text-xl text-slate-900 mb-2">{p!.title}</h3>
+                        <h3 className="font-serif text-xl text-slate-900 mb-2 group-hover:opacity-70 transition-opacity">{p!.title}</h3>
                         <p className="text-slate-500 font-light flex items-center gap-1.5 text-sm mb-4">
                           <MapPin className="w-3.5 h-3.5" /> {p!.location}
                         </p>
@@ -400,9 +427,9 @@ export default function DemoHogarPrime() {
                           </span>
                         </div>
                         <div className="h-px bg-slate-100 mt-6" />
-                        <a href="#contacto" className="inline-flex items-center gap-2 mt-4 text-xs tracking-[0.2em] uppercase text-slate-500 hover:text-slate-900 transition-colors">
-                          Me interesa <ChevronRight className="w-3 h-3" />
-                        </a>
+                        <span className="inline-flex items-center gap-2 mt-4 text-xs tracking-[0.2em] uppercase text-slate-500 group-hover:text-slate-900 transition-colors">
+                          Ver detalles <ChevronRight className="w-3 h-3" />
+                        </span>
                       </motion.div>
                     ))}
                   </div>
@@ -640,13 +667,107 @@ export default function DemoHogarPrime() {
         </div>
       </section>
 
+      <AnimatePresence>
+        {selectedProperty && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm"
+            onClick={() => setSelectedProperty(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 60 }}
+              transition={{ duration: 0.4, ease: 'easeOut' as const }}
+              className="bg-white w-full sm:max-w-3xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto sm:mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden">
+                <img src={selectedProperty.image} alt={selectedProperty.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
+                <button
+                  onClick={() => setSelectedProperty(null)}
+                  className="absolute top-4 right-4 p-2.5 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all"
+                >
+                  <X className="w-5 h-5 text-white" />
+                </button>
+                {selectedProperty.featured && (
+                  <span className="absolute top-4 left-4 px-4 py-1.5 text-[10px] tracking-[0.3em] uppercase" style={{ backgroundColor: '#D4A853', color: '#1E293B' }}>
+                    Destacada
+                  </span>
+                )}
+                <div className="absolute bottom-4 left-5 sm:left-8">
+                  <span className="font-serif text-2xl sm:text-3xl text-white">{selectedProperty.price}</span>
+                </div>
+              </div>
+              <div className="p-5 sm:p-8 lg:p-10">
+                <p className="text-xs tracking-[0.2em] uppercase text-slate-400 mb-2">{selectedProperty.type}</p>
+                <h3 className="font-serif text-2xl sm:text-3xl text-slate-900 mb-3">{selectedProperty.title}</h3>
+                <p className="text-slate-500 font-light flex items-center gap-2 text-sm mb-8">
+                  <MapPin className="w-4 h-4" /> {selectedProperty.location}
+                </p>
+                <div className="flex items-center gap-8 sm:gap-10 mb-8 pb-8 border-b border-slate-100">
+                  {selectedProperty.beds > 0 && (
+                    <div className="flex items-center gap-3 text-slate-600">
+                      <Bed className="w-5 h-5 text-slate-400" />
+                      <div>
+                        <p className="font-serif text-lg">{selectedProperty.beds}</p>
+                        <p className="text-[10px] tracking-[0.15em] uppercase text-slate-400">Habitaciones</p>
+                      </div>
+                    </div>
+                  )}
+                  {selectedProperty.baths > 0 && (
+                    <div className="flex items-center gap-3 text-slate-600">
+                      <Bath className="w-5 h-5 text-slate-400" />
+                      <div>
+                        <p className="font-serif text-lg">{selectedProperty.baths}</p>
+                        <p className="text-[10px] tracking-[0.15em] uppercase text-slate-400">Baños</p>
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-3 text-slate-600">
+                    <Maximize className="w-5 h-5 text-slate-400" />
+                    <div>
+                      <p className="font-serif text-lg">{selectedProperty.area}</p>
+                      <p className="text-[10px] tracking-[0.15em] uppercase text-slate-400">Superficie</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-slate-600 font-light leading-relaxed mb-10">{selectedProperty.desc}</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="https://wa.me/50427890123"
+                    className="flex-1 flex items-center justify-center gap-3 py-4 text-xs tracking-widest uppercase text-white transition-all hover:opacity-90 cursor-pointer"
+                    style={{ backgroundColor: '#25D366' }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <WhatsAppIcon className="w-4 h-4" /> Consultar por WhatsApp
+                  </a>
+                  <a
+                    href="#contacto"
+                    className="flex-1 flex items-center justify-center gap-3 py-4 border text-xs tracking-widest uppercase transition-all hover:bg-slate-900 hover:text-white cursor-pointer"
+                    style={{ borderColor: '#1E293B', color: '#1E293B' }}
+                    onClick={() => setSelectedProperty(null)}
+                  >
+                    Solicitar Información
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <footer className="py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <Link to="/" className="font-serif text-2xl tracking-wide text-slate-900">
             Hogar <em className="italic" style={{ color: '#D4A853' }}>Prime</em>
           </Link>
           <div className="h-px w-16 mx-auto my-8" style={{ backgroundColor: '#D4A853' }} />
-          <div className="flex justify-center gap-10 mb-8">
+          <div className="flex justify-center gap-6 sm:gap-10 mb-8 flex-wrap">
             {['Propiedades', 'Servicios', 'Testimonios', 'Contacto'].map(item => (
               <a key={item} href={`#${item.toLowerCase()}`} className="text-xs tracking-[0.2em] uppercase text-slate-400 hover:text-slate-600 transition-colors font-light">
                 {item}

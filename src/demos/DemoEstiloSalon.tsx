@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Star, Calendar, ArrowRight, Scissors, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Phone, MapPin, Clock, Star, Calendar, ArrowRight, Scissors, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
 import { LorealLogo, SchwarzkopfLogo, WellaLogo, OPILogo, MoroccanoilLogo } from '../components/BrandLogos';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -75,6 +75,7 @@ const roseGoldLight = '#D4A0A7';
 export default function DemoEstiloSalon() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 80);
@@ -137,7 +138,27 @@ export default function DemoEstiloSalon() {
                 </a>
               ))}
             </motion.div>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden absolute right-4 top-1/2 -translate-y-1/2" style={{ color: roseGold }}>
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
+          {mobileMenuOpen && (
+            <div className="md:hidden flex flex-col items-center gap-4 py-4 border-t" style={{ borderColor: `${roseGold}20` }}>
+              {['servicios', 'galería', 'equipo', 'testimonios', 'contacto'].map(item => (
+                <a
+                  key={item}
+                  href={`#${item}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-light tracking-wider text-slate-500 hover:text-slate-800 transition-colors"
+                >
+                  {item}
+                </a>
+              ))}
+              <a href="https://wa.me/50422567890" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-sm font-light tracking-wider" style={{ color: roseGold }}>
+                <WhatsAppIcon className="w-4 h-4" /> WhatsApp
+              </a>
+            </div>
+          )}
         </div>
       </motion.nav>
 
@@ -303,12 +324,12 @@ export default function DemoEstiloSalon() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 auto-rows-[180px] md:auto-rows-[200px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 auto-rows-[200px] sm:auto-rows-[180px] md:auto-rows-[200px]">
             {services.map((svc, i) => {
               const spanClass = svc.size === 'large'
-                ? 'col-span-2 row-span-2'
+                ? 'col-span-1 sm:col-span-2 row-span-1 sm:row-span-2'
                 : svc.size === 'medium'
-                  ? 'col-span-2 row-span-1 md:col-span-1 md:row-span-2'
+                  ? 'col-span-1 sm:col-span-2 row-span-1 md:col-span-1 md:row-span-2'
                   : 'col-span-1 row-span-1';
 
               return (

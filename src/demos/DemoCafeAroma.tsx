@@ -95,12 +95,12 @@ export default function DemoCafeAroma() {
             </span>
           </Link>
         </div>
-        <div className="flex items-center justify-center gap-8 py-2.5 border-t border-b" style={{ borderColor: '#D4A574' }}>
-          <a href="#menu" className="text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity" style={{ color: '#78350F' }}>Menu</a>
-          <a href="#historia" className="text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity" style={{ color: '#78350F' }}>Historia</a>
-          <a href="#galeria" className="text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity" style={{ color: '#78350F' }}>Galeria</a>
-          <a href="#reservar" className="text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity" style={{ color: '#78350F' }}>Reservar</a>
-          <a href="https://wa.me/50495671234" className="hidden sm:flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity" style={{ color: '#78350F' }}>
+        <div className="flex items-center justify-center gap-4 sm:gap-8 py-2.5 border-t border-b overflow-x-auto" style={{ borderColor: '#D4A574' }}>
+          <a href="#menu" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Menu</a>
+          <a href="#historia" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Historia</a>
+          <a href="#galeria" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Galeria</a>
+          <a href="#reservar" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Reservar</a>
+          <a href="https://wa.me/50495671234" className="hidden sm:flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>
             <WhatsAppIcon className="w-3.5 h-3.5" /> WhatsApp
           </a>
         </div>
@@ -211,7 +211,7 @@ export default function DemoCafeAroma() {
 
       <section className="py-6" style={{ backgroundColor: '#78350F' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center justify-center sm:justify-between flex-wrap gap-3 sm:gap-4">
             {[
               { icon: Clock, text: 'Lun-Sab 7AM-9PM | Dom 8AM-6PM' },
               { icon: Phone, text: '+504 2231-4567' },
@@ -219,8 +219,8 @@ export default function DemoCafeAroma() {
             ].map(item => {
               const Icon = item.icon;
               return (
-                <div key={item.text} className="flex items-center gap-2 text-sm" style={{ color: '#FBBF24' }}>
-                  <Icon className="w-4 h-4" />
+                <div key={item.text} className="flex items-center gap-2 text-xs sm:text-sm" style={{ color: '#FBBF24' }}>
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span className="font-light">{item.text}</span>
                 </div>
               );

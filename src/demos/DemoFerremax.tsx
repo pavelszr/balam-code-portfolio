@@ -208,7 +208,7 @@ export default function DemoFerremax() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-6 md:p-8 text-center ${i < 3 ? 'border-b-2 lg:border-b-0 lg:border-r-2 border-neutral-800' : ''} ${i === 1 ? 'border-r-2 border-neutral-800 lg:border-r-2' : ''} ${i === 0 ? 'border-r-2 border-neutral-800' : ''}`}
+              className={`p-4 sm:p-6 md:p-8 text-center border-neutral-800 ${i % 2 === 0 ? 'border-r-2' : ''} ${i < 2 ? 'border-b-2' : ''} ${i === 2 ? 'lg:border-r-2' : ''} lg:border-b-0 ${i < 3 ? 'lg:border-r-2' : ''}`}
             >
               <p className="font-mono text-3xl md:text-5xl font-black text-yellow-500 mb-2">{stat.value}</p>
               <p className="font-mono text-neutral-500 text-[10px] md:text-xs uppercase tracking-[0.2em]">{stat.label}</p>
@@ -375,9 +375,10 @@ export default function DemoFerremax() {
                 LLAMAR AHORA
               </a>
             </div>
-            <div className="flex items-center justify-center gap-2 text-neutral-600 font-mono text-xs uppercase tracking-wider">
-              <GoogleMapsIcon className="w-4 h-4" />
-              <span>Blvd. Morazan, Tegucigalpa | Lun-Sab 7AM-6PM</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-neutral-600 font-mono text-xs uppercase tracking-wider">
+              <span className="flex items-center gap-2"><GoogleMapsIcon className="w-4 h-4 flex-shrink-0" />Blvd. Morazan, Tegucigalpa</span>
+              <span className="hidden sm:inline">|</span>
+              <span>Lun-Sab 7AM-6PM</span>
             </div>
           </motion.div>
         </div>

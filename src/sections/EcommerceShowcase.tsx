@@ -221,7 +221,7 @@ export default function EcommerceShowcase() {
         </div>
 
         <div className="ecom-dashboard mb-20">
-          <div className="bg-slate-900/80 border border-slate-800/80 rounded-[2rem] p-6 sm:p-8 backdrop-blur-sm shadow-2xl shadow-cyan-500/[0.05]">
+          <div className="bg-slate-900/80 border border-slate-800/80 rounded-2xl sm:rounded-[2rem] p-4 sm:p-6 lg:p-8 backdrop-blur-sm shadow-2xl shadow-cyan-500/[0.05]">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
@@ -241,21 +241,21 @@ export default function EcommerceShowcase() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {kpis.map((kpi) => (
-                <div key={kpi.label} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 group hover:bg-white/[0.06] hover:border-cyan-500/20 transition-all duration-300">
+                <div key={kpi.label} className="bg-white/[0.03] border border-white/[0.06] rounded-xl sm:rounded-2xl p-3 sm:p-5 group hover:bg-white/[0.06] hover:border-cyan-500/20 transition-all duration-300">
                   <div className="flex items-center justify-between mb-3">
                     <kpi.icon className="w-5 h-5 text-slate-500 group-hover:text-cyan-400 transition-colors" />
                     <span className="text-xs font-mono font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full">{kpi.change}</span>
                   </div>
-                  <p className="text-2xl font-bold text-white font-mono mb-1">{kpi.value}</p>
+                  <p className="text-lg sm:text-2xl font-bold text-white font-mono mb-1">{kpi.value}</p>
                   <p className="text-xs text-slate-500">{kpi.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2 bg-white/[0.02] border border-white/[0.05] rounded-2xl p-6">
+            <div className="grid lg:grid-cols-3 gap-4 sm:gap-6">
+              <div className="lg:col-span-2 bg-white/[0.02] border border-white/[0.05] rounded-xl sm:rounded-2xl p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h4 className="text-white font-semibold text-sm">Ingresos Mensuales</h4>
@@ -272,7 +272,7 @@ export default function EcommerceShowcase() {
                 <MiniBarChart />
               </div>
 
-              <div className="bg-white/[0.02] border border-white/[0.05] rounded-2xl p-6">
+              <div className="bg-white/[0.02] border border-white/[0.05] rounded-xl sm:rounded-2xl p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-white font-semibold text-sm">Productos Top</h4>
                   <Eye className="w-4 h-4 text-slate-500" />
@@ -281,7 +281,7 @@ export default function EcommerceShowcase() {
               </div>
             </div>
 
-            <div className="mt-6 bg-white/[0.02] border border-white/[0.05] rounded-2xl p-6">
+            <div className="mt-4 sm:mt-6 bg-white/[0.02] border border-white/[0.05] rounded-xl sm:rounded-2xl p-4 sm:p-6">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-white font-semibold text-sm">Pedidos Recientes</h4>
                 <span className="text-xs text-cyan-400 font-mono">Ver todos →</span>
@@ -304,7 +304,7 @@ export default function EcommerceShowcase() {
         </div>
 
         <div className="text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 bg-white/[0.03] rounded-[2rem] border border-white/[0.06] shadow-2xl">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-4 sm:p-6 bg-white/[0.03] rounded-2xl sm:rounded-[2rem] border border-white/[0.06] shadow-2xl">
             <p className="text-slate-300 font-medium">Mira cómo funciona el panel de administración completo</p>
             <Link
               to="/demo/ecommerce-admin"

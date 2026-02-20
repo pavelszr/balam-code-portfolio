@@ -177,6 +177,21 @@ export default function DemoFitZone() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
+        @media (min-width: 640px) {
+          .class-card-0 { transform: skewY(-1.5deg); margin-left: 0px; }
+          .class-card-1 { transform: skewY(1.5deg); margin-left: 20px; }
+          .class-card-2 { transform: skewY(-1.5deg); margin-left: 40px; }
+          .class-card-3 { transform: skewY(1.5deg); margin-left: 60px; }
+          .class-card-4 { transform: skewY(-1.5deg); margin-left: 80px; }
+          .class-card-5 { transform: skewY(1.5deg); margin-left: 100px; }
+        }
+        @media (min-width: 640px) {
+          .class-inner-0, .class-inner-2, .class-inner-4 { transform: skewY(1.5deg); }
+          .class-inner-1, .class-inner-3, .class-inner-5 { transform: skewY(-1.5deg); }
+        }
+        @media (max-width: 639px) {
+          .class-card { transform: none !important; margin-left: 0 !important; }
+        }
       `}</style>
 
       <div className="fixed top-0 left-0 right-0 z-[60] bg-zinc-950 border-b border-lime-500/30 text-white text-center py-2.5 text-sm font-medium">
@@ -367,26 +382,25 @@ export default function DemoFitZone() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07, duration: 0.3, type: 'spring', stiffness: 150 }}
                 whileHover={{ skewY: 0, x: 10 }}
-                className="group relative bg-zinc-900 border border-zinc-800 overflow-hidden flex items-stretch cursor-pointer hover:border-lime-500/40 transition-all duration-300"
+                className={`class-card class-card-${i} group relative bg-zinc-900 border border-zinc-800 overflow-hidden flex items-stretch cursor-pointer hover:border-lime-500/40 transition-all duration-300`}
                 style={{
-                  transform: `skewY(${i % 2 === 0 ? -1.5 : 1.5}deg)`,
-                  marginLeft: `${i * 20}px`,
                   zIndex: classes.length - i,
                 }}
               >
-                <div className="w-28 sm:w-36 flex-shrink-0 overflow-hidden" style={{ transform: `skewY(${i % 2 === 0 ? 1.5 : -1.5}deg)` }}>
+                <div className={`w-20 sm:w-36 flex-shrink-0 overflow-hidden class-inner-${i}`}>
                   <img src={cls.image} alt={cls.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <div className="flex-1 p-5 flex items-center justify-between" style={{ transform: `skewY(${i % 2 === 0 ? 1.5 : -1.5}deg)` }}>
+                <div className={`flex-1 p-3 sm:p-5 flex items-center justify-between class-inner-${i}`}>
                   <div>
-                    <h3 className="text-white font-extrabold text-lg uppercase tracking-tight group-hover:text-lime-400 transition-colors">{cls.name}</h3>
+                    <h3 className="text-white font-extrabold text-sm sm:text-lg uppercase tracking-tight group-hover:text-lime-400 transition-colors">{cls.name}</h3>
                     <div className="flex items-center gap-3 mt-1">
-                      <span className="text-zinc-500 text-xs flex items-center gap-1">
-                        <Calendar className="w-3 h-3 text-lime-500" />
-                        {cls.schedule}
+                      <span className="text-zinc-500 text-[10px] sm:text-xs flex items-center gap-1">
+                        <Calendar className="w-3 h-3 text-lime-500 flex-shrink-0" />
+                        <span className="hidden sm:inline">{cls.schedule}</span>
+                        <span className="sm:hidden">{cls.schedule.split('—')[0]?.trim()}</span>
                       </span>
                     </div>
-                    <span className="text-zinc-600 text-xs mt-1 block">{cls.instructor}</span>
+                    <span className="text-zinc-600 text-[10px] sm:text-xs mt-1 block">{cls.instructor}</span>
                   </div>
                   <span className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-sm ${
                     cls.difficulty === 'Alta' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
@@ -420,7 +434,7 @@ export default function DemoFitZone() {
                 transition={{ delay: i * 0.1, duration: 0.4, type: 'spring', stiffness: 100 }}
                 className="text-center lg:text-left"
               >
-                <div className="stat-number text-7xl sm:text-8xl lg:text-[10rem] font-extrabold leading-none tracking-tighter font-mono">
+                <div className="stat-number text-5xl sm:text-8xl lg:text-[10rem] font-extrabold leading-none tracking-tighter font-mono">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="text-zinc-600 text-xs uppercase tracking-[0.3em] font-bold mt-2">{stat.label}</p>
