@@ -67,6 +67,16 @@ const projects = [
     features: ['Catálogo de servicios', 'Galería de trabajos', 'Reserva de citas online', 'Equipo de estilistas', 'Testimonios de clientes'],
     animation: 'ekg',
   },
+  {
+    name: 'TechStore Admin',
+    type: 'Panel Admin E-Commerce',
+    category: 'Tienda de Tecnología',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    description: 'Panel de administración completo para e-commerce con dashboard de ventas en tiempo real, gestión de inventario y analíticas avanzadas.',
+    demoUrl: '/demo/ecommerce-admin',
+    features: ['Dashboard de ventas en tiempo real', 'Gestión de productos e inventario', 'Analíticas y embudo de conversión', 'Gestión de clientes y segmentos', 'Alertas de stock automáticas'],
+    animation: 'helix',
+  },
 ];
 
 function HelixAnimation() {
@@ -149,7 +159,7 @@ export default function Portfolio() {
     return () => ctx.revert();
   }, []);
 
-  const animations = [<HelixAnimation />, <GridAnimation />, <EKGAnimation />, <HelixAnimation />, <GridAnimation />, <EKGAnimation />];
+  const animations = [<HelixAnimation />, <GridAnimation />, <EKGAnimation />, <HelixAnimation />, <GridAnimation />, <EKGAnimation />, <HelixAnimation />];
 
   return (
     <section id="portfolio" ref={sectionRef} className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">

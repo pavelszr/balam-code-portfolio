@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Search, Bed, Bath, Maximize, Heart, Home, Building, TreePine, ArrowRight, Shield, Star, Users, Key, ChevronRight } from 'lucide-react';
+import { Phone, MapPin, Search, Bed, Bath, Maximize, Heart, Home, Building, TreePine, ArrowRight, Shield, Users, Key, ChevronRight } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { WhatsAppIcon } from '../components/SocialIcons';
 import { BACLogo, FicohsaLogo, DaviviendaLogo, CemcolLogo, InversaLogo } from '../components/BrandLogos';
@@ -119,14 +119,14 @@ export default function DemoHogarPrime() {
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true },
-    transition: { duration: 1.0, ease: 'easeOut' },
+    transition: { duration: 1.0, ease: 'easeOut' as const },
   };
 
   const lineReveal = {
     initial: { scaleX: 0 },
     whileInView: { scaleX: 1 },
     viewport: { once: true },
-    transition: { duration: 1.2, ease: 'easeOut' },
+    transition: { duration: 1.2, ease: 'easeOut' as const },
   };
 
   return (
@@ -172,7 +172,7 @@ export default function DemoHogarPrime() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
+            transition={{ duration: 1.5, ease: 'easeOut' as const }}
           >
             <p className="text-xs tracking-[0.4em] uppercase mb-8 font-light" style={{ color: '#D4A853' }}>
               Bienes Raíces de Prestigio en Honduras
@@ -181,7 +181,7 @@ export default function DemoHogarPrime() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
+            transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' as const }}
             className="font-serif text-5xl sm:text-6xl lg:text-8xl text-white leading-[1.1] mb-8"
           >
             Donde la <em className="italic" style={{ color: '#D4A853' }}>elegancia</em><br />encuentra su hogar
@@ -189,7 +189,7 @@ export default function DemoHogarPrime() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 1.0, delay: 0.6, ease: 'easeOut' as const }}
             className="text-white/70 font-light text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-12"
           >
             Casas, apartamentos y terrenos en las mejores zonas de Honduras. Asesoría gratuita y financiamiento disponible.
@@ -197,7 +197,7 @@ export default function DemoHogarPrime() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.0, delay: 0.9, ease: 'easeOut' }}
+            transition={{ duration: 1.0, delay: 0.9, ease: 'easeOut' as const }}
             className="flex items-center justify-center gap-12 flex-wrap"
           >
             {[
@@ -215,7 +215,7 @@ export default function DemoHogarPrime() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 1.2, ease: 'easeOut' }}
+            transition={{ duration: 1.0, delay: 1.2, ease: 'easeOut' as const }}
             className="mt-14"
           >
             <a href="#propiedades" className="inline-flex items-center gap-3 px-10 py-4 border text-sm tracking-widest uppercase text-white hover:bg-white hover:text-slate-900 transition-all duration-500" style={{ borderColor: '#D4A853' }}>
@@ -273,7 +273,7 @@ export default function DemoHogarPrime() {
                     layoutId="filterUnderline"
                     className="absolute bottom-0 left-0 right-0 h-px"
                     style={{ backgroundColor: '#D4A853' }}
-                    transition={{ duration: 0.4, ease: 'easeOut' }}
+                    transition={{ duration: 0.4, ease: 'easeOut' as const }}
                   />
                 )}
               </button>
@@ -298,7 +298,7 @@ export default function DemoHogarPrime() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.0, ease: 'easeOut' }}
+                    transition={{ duration: 1.0, ease: 'easeOut' as const }}
                     className="relative group overflow-hidden"
                   >
                     <div className="aspect-[16/9] sm:aspect-[21/9] overflow-hidden">
@@ -359,7 +359,7 @@ export default function DemoHogarPrime() {
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.0, delay: j * 0.15, ease: 'easeOut' }}
+                        transition={{ duration: 1.0, delay: j * 0.15, ease: 'easeOut' as const }}
                         className="group"
                       >
                         <div className="relative aspect-[4/3] overflow-hidden mb-6">
@@ -433,7 +433,7 @@ export default function DemoHogarPrime() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1.0, delay: i * 0.1, ease: 'easeOut' }}
+                  transition={{ duration: 1.0, delay: i * 0.1, ease: 'easeOut' as const }}
                 >
                   {i === 0 && <div className="h-px bg-slate-200" />}
                   <div className="py-12 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-16">
@@ -492,7 +492,7 @@ export default function DemoHogarPrime() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
+                transition={{ duration: 0.8, ease: 'easeOut' as const }}
                 className="absolute inset-0 flex flex-col items-center justify-center"
               >
                 <span className="font-serif text-8xl leading-none mb-6" style={{ color: '#D4A853', opacity: 0.3 }}>"</span>

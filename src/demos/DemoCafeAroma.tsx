@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Coffee, Flame, Award, Users, CalendarDays, ChevronDown, Star } from 'lucide-react';
+import { Phone, MapPin, Clock, Coffee, Flame, Award, Users, ChevronDown, Star } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
 import { LavazzaLogo, HarioLogo, ChemexLogo, AeropressLogo, BaratzaLogo } from '../components/BrandLogos';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -43,7 +43,7 @@ const timelineSteps = [
 ];
 
 export default function DemoCafeAroma() {
-  const [activeCategory, setActiveCategory] = useState('Todos');
+  const [_activeCategory, setActiveCategory] = useState('Todos');
   const [openAccordion, setOpenAccordion] = useState<string | null>('Todos');
   const [steamOffset, setSteamOffset] = useState(0);
 
@@ -58,8 +58,6 @@ export default function DemoCafeAroma() {
     frame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frame);
   }, []);
-
-  const filtered = menuItems.filter(item => activeCategory === 'Todos' || item.category === activeCategory);
 
   const categoryNames = menuCategories.map(c => c.name).filter(n => n !== 'Todos');
 

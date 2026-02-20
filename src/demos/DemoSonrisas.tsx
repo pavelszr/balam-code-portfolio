@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Star, ChevronLeft, ChevronRight, Shield, Sparkles, Heart, Users, Award, ArrowRight, Calendar } from 'lucide-react';
+import { Phone, MapPin, Clock, Star, ChevronLeft, ChevronRight, Shield, Sparkles, Heart, ArrowRight, Calendar } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { WhatsAppIcon } from '../components/SocialIcons';
 import { ColgateLogo, OralBLogo, PhilipsLogo, DentsplyLogo, ThreeMlogo, IvoclarLogo } from '../components/BrandLogos';

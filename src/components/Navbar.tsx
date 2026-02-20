@@ -6,6 +6,7 @@ const navLinks = [
   { href: '#servicios', label: 'Servicios' },
   { href: '#pricing', label: 'Precios' },
   { href: '#portfolio', label: 'Portafolio' },
+  { href: '#ecommerce', label: 'E-Commerce' },
   { href: '#testimonios', label: 'Testimonios' },
   { href: '#about', label: 'Nosotros' },
 ];

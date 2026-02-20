@@ -18,6 +18,8 @@ import DemoHogarPrime from './demos/DemoHogarPrime';
 import DemoCafeAroma from './demos/DemoCafeAroma';
 import DemoFitZone from './demos/DemoFitZone';
 import DemoEstiloSalon from './demos/DemoEstiloSalon';
+import DemoEcommerceAdmin from './demos/DemoEcommerceAdmin';
+import EcommerceShowcase from './sections/EcommerceShowcase';
 
 function HomePage() {
   return (
@@ -31,6 +33,7 @@ function HomePage() {
         <Philosophy />
         <Pricing />
         <Portfolio />
+        <EcommerceShowcase />
         <Impact />
         <Testimonials />
         <FAQ />
@@ -53,6 +56,7 @@ function App() {
       <Route path="/demo/cafe-aroma" element={<DemoCafeAroma />} />
       <Route path="/demo/fitzone" element={<DemoFitZone />} />
       <Route path="/demo/estilo-salon" element={<DemoEstiloSalon />} />
+      <Route path="/demo/ecommerce-admin" element={<DemoEcommerceAdmin />} />
     </Routes>
     </>
   );

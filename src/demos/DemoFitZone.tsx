@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Users, Dumbbell, Flame, Zap, Crown, CheckCircle, Calendar, Trophy, Home, Award, CreditCard, Mail } from 'lucide-react';
+import { Phone, MapPin, Clock, Users, Dumbbell, Flame, Zap, CheckCircle, Calendar, Trophy, Home, CreditCard, Mail } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { WhatsAppIcon } from '../components/SocialIcons';
 import { NikeLogo, AdidasLogo, UnderArmourLogo, ReebokLogo, PumaLogo } from '../components/BrandLogos';
@@ -487,7 +487,7 @@ export default function DemoFitZone() {
                 </tr>
               </thead>
               <tbody>
-                {planFeatureRows.map((feature, fi) => (
+                {planFeatureRows.map((feature, _fi) => (
                   <tr key={feature} className="group">
                     <td className="p-4 text-zinc-400 text-sm border-b border-zinc-800/50 font-medium">
                       {feature}
