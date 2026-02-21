@@ -152,7 +152,7 @@ function DashboardPage() {
               <p className="text-[10px] sm:text-xs text-slate-500 mt-1">Últimos 6 meses</p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-2 w-2" aria-hidden="true">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
               </span>
@@ -191,7 +191,7 @@ function DashboardPage() {
               <div key={cat.name}>
                 <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: cat.color }} />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full flex-shrink-0" aria-hidden="true" style={{ backgroundColor: cat.color }} />
                     <span className="text-xs sm:text-sm text-slate-300">{cat.name}</span>
                   </div>
                   <span className="text-xs text-white font-mono font-semibold">{cat.percentage}%</span>
@@ -269,7 +269,7 @@ function DashboardPage() {
                   <td className="px-5 py-4"><StatusBadge status={order.status} /></td>
                   <td className="px-5 py-4"><span className="text-sm text-slate-400">{order.date}</span></td>
                   <td className="px-5 py-4">
-                    <button className="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-white/[0.06] rounded-lg transition-all">
+                    <button aria-label="Más opciones" className="opacity-0 group-hover:opacity-100 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/[0.06] rounded-lg transition-all">
                       <MoreHorizontal className="w-4 h-4 text-slate-500" />
                     </button>
                   </td>
@@ -300,11 +300,11 @@ function DashboardPage() {
         <div className="p-3 sm:p-4 border-t border-slate-800/40 flex items-center justify-between">
           <span className="text-[10px] sm:text-xs text-slate-500">5 de 1,284</span>
           <div className="flex items-center gap-1">
-            <button className="p-1 sm:p-1.5 rounded-lg hover:bg-white/[0.06] text-slate-500 transition-colors"><ChevronLeft className="w-4 h-4" /></button>
-            <button className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg text-xs font-medium bg-cyan-500/20 text-cyan-400">1</button>
-            <button className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg text-xs text-slate-500 hover:bg-white/[0.04] transition-colors">2</button>
-            <button className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg text-xs text-slate-500 hover:bg-white/[0.04] transition-colors">3</button>
-            <button className="p-1 sm:p-1.5 rounded-lg hover:bg-white/[0.06] text-slate-500 transition-colors"><ChevronRight className="w-4 h-4" /></button>
+            <button aria-label="Página anterior" className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/[0.06] text-slate-500 transition-colors"><ChevronLeft className="w-4 h-4" /></button>
+            <button className="min-w-[44px] min-h-[44px] rounded-lg text-xs font-medium bg-cyan-500/20 text-cyan-400 flex items-center justify-center">1</button>
+            <button className="min-w-[44px] min-h-[44px] rounded-lg text-xs text-slate-500 hover:bg-white/[0.04] transition-colors flex items-center justify-center">2</button>
+            <button className="min-w-[44px] min-h-[44px] rounded-lg text-xs text-slate-500 hover:bg-white/[0.04] transition-colors flex items-center justify-center">3</button>
+            <button aria-label="Página siguiente" className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-white/[0.06] text-slate-500 transition-colors"><ChevronRight className="w-4 h-4" /></button>
           </div>
         </div>
       </div>
@@ -364,7 +364,7 @@ function ProductsPage() {
                   <td className="px-5 py-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/[0.05] flex-shrink-0">
-                        <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover" />
+                        <img src={product.image} alt={product.name} width={40} height={40} loading="lazy" className="w-full h-full object-cover" />
                       </div>
                       <div>
                         <span className="text-sm text-white font-medium">{product.name}</span>
@@ -400,7 +400,7 @@ function ProductsPage() {
           <div key={product.sku} className="bg-slate-900/60 border border-slate-800/60 rounded-xl p-4">
             <div className="flex items-start gap-3 mb-3">
               <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/[0.05] flex-shrink-0">
-                <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover" />
+                <img src={product.image} alt={product.name} width={48} height={48} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm text-white font-medium truncate">{product.name}</p>
@@ -769,7 +769,8 @@ export default function DemoEcommerceAdmin() {
         <div className="p-3 border-t border-slate-800/60">
           <button
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-500 hover:text-white hover:bg-white/[0.04] transition-colors"
+            aria-label={sidebarCollapsed ? 'Expandir menú' : 'Colapsar menú'}
+            className="w-full flex items-center gap-3 px-3 py-2.5 min-h-[44px] rounded-xl text-sm text-slate-500 hover:text-white hover:bg-white/[0.04] transition-colors"
           >
             {sidebarCollapsed ? <ChevronRight className="w-5 h-5" /> : <><ChevronLeft className="w-5 h-5" /><span>Colapsar</span></>}
           </button>
@@ -777,12 +778,14 @@ export default function DemoEcommerceAdmin() {
       </aside>
 
       <div className={`flex-1 flex flex-col transition-all duration-300 ${sidebarCollapsed ? 'lg:ml-[72px]' : 'lg:ml-60'}`}>
-        <header className="sticky top-[34px] sm:top-[38px] z-30 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/40">
+        <header className="sticky top-[34px] sm:top-[38px] z-30 bg-slate-950/[0.97] md:bg-slate-950/80 md:backdrop-blur-xl border-b border-slate-800/40">
           <div className="flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3">
             <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 hover:bg-white/[0.04] rounded-xl text-slate-400 transition-colors"
+                aria-label="Menú"
+                aria-expanded={mobileMenuOpen}
+                className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/[0.04] rounded-xl text-slate-400 transition-colors"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -793,7 +796,7 @@ export default function DemoEcommerceAdmin() {
               <span className="lg:hidden text-sm font-bold text-white">TechStore</span>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
-              <button className="relative p-2 hover:bg-white/[0.04] rounded-xl text-slate-400 transition-colors">
+              <button aria-label="Notificaciones" className="relative min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-white/[0.04] rounded-xl text-slate-400 transition-colors">
                 <Bell className="w-5 h-5" />
                 {notifications > 0 && (
                   <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">{notifications}</span>

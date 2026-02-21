@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ShoppingCart, BarChart3, Package, Users, TrendingUp, DollarSign, Eye, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { MayanBgPattern, MayanStepPattern } from '../components/MayanElements';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -195,12 +196,9 @@ export default function EcommerceShowcase() {
 
   return (
     <section id="ecommerce" ref={sectionRef} className="py-24 lg:py-32 bg-slate-950 relative overflow-hidden">
-      <div className="hidden md:block absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-        backgroundSize: '40px 40px',
-      }} />
-      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/[0.04] rounded-full blur-[120px]" />
-      <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/[0.03] rounded-full blur-[100px]" />
+      <MayanBgPattern className="hidden md:block opacity-[0.15] text-cyan-500" />
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/[0.04] rounded-full blur-[80px]" />
+      <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/[0.03] rounded-full blur-[60px]" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-16">
@@ -208,12 +206,16 @@ export default function EcommerceShowcase() {
             <ShoppingCart className="w-3.5 h-3.5" />
             E-Commerce Profesional
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-            Tu Tienda Online con{' '}
-            <span className="font-serif italic text-cyan-400" style={{ textShadow: '0 0 30px rgba(6, 182, 212, 0.3)' }}>
-              Panel de Control
-            </span>
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <MayanStepPattern className="text-cyan-400 opacity-40" />
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+              Tu Tienda Online con{' '}
+              <span className="font-serif italic text-cyan-400" style={{ textShadow: '0 0 30px rgba(6, 182, 212, 0.3)' }}>
+                Panel de Control
+              </span>
+            </h2>
+            <MayanStepPattern className="text-cyan-400 opacity-40 scale-x-[-1]" />
+          </div>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
             No solo una tienda bonita. Un sistema completo con dashboard de ventas,
             inventario inteligente y analíticas que te dicen exactamente qué está funcionando.
@@ -221,7 +223,7 @@ export default function EcommerceShowcase() {
         </div>
 
         <div className="ecom-dashboard mb-20">
-          <div className="bg-slate-900/80 border border-slate-800/80 rounded-2xl sm:rounded-[2rem] p-4 sm:p-6 lg:p-8 backdrop-blur-sm shadow-2xl shadow-cyan-500/[0.05]">
+          <div aria-hidden="true" className="bg-slate-900 border border-slate-800/80 rounded-2xl sm:rounded-[2rem] p-4 sm:p-6 lg:p-8 shadow-2xl shadow-cyan-500/[0.05]">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Check, Rocket, ShoppingCart, Sparkles, ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
+import { MayanBgPattern } from '../components/MayanElements';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -97,11 +98,8 @@ export default function Pricing() {
 
   return (
     <section id="pricing" ref={sectionRef} className="py-24 lg:py-32 bg-slate-950 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-        backgroundSize: '40px 40px',
-      }} />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px]" />
+      <MayanBgPattern className="hidden md:block opacity-[0.15] text-cyan-500" />
+      <div aria-hidden="true" className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/5 rounded-full blur-[80px]" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-16">
@@ -130,11 +128,11 @@ export default function Pricing() {
                     ? 'animated-border lg:scale-105 shadow-2xl shadow-cyan-500/10'
                     : 'bg-slate-900/80 border border-slate-800 hover:border-slate-700 hover:shadow-lg hover:shadow-cyan-500/5'
                 }`}
-                style={plan.highlight ? { '--card-bg': '#0f172a' } as React.CSSProperties : undefined}
+                style={plan.highlight ? { '--card-bg': '#0f172a', contain: 'layout style paint' } as React.CSSProperties : { contain: 'layout style paint' }}
               >
                 {plan.highlight && (
                   <>
-                    <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/15 via-transparent to-transparent rounded-[2rem] pointer-events-none" />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-cyan-500/15 via-transparent to-transparent rounded-[2rem] pointer-events-none" />
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold rounded-full shadow-lg shadow-cyan-500/30">
                       Lo Eligen el 80%
                     </div>
@@ -197,7 +195,7 @@ export default function Pricing() {
               href="https://wa.me/50433672227?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium rounded-full hover:bg-green-500/20 transition-colors"
+              className="flex items-center gap-2 px-5 py-2.5 min-h-[44px] bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium rounded-full hover:bg-green-500/20 transition-colors"
             >
               <WhatsAppIcon className="w-4 h-4" />
               Cotización en 5 minutos

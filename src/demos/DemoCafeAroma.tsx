@@ -48,6 +48,11 @@ export default function DemoCafeAroma() {
   const [steamOffset, setSteamOffset] = useState(0);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setSteamOffset(6);
+      return;
+    }
     let frame: number;
     let start: number | null = null;
     const animate = (ts: number) => {
@@ -74,6 +79,7 @@ export default function DemoCafeAroma() {
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#FFFBEB' }}>
       <div
         className="fixed inset-0 pointer-events-none z-[1]"
+        aria-hidden="true"
         style={{ backgroundImage: grainOverlay, backgroundRepeat: 'repeat', backgroundSize: '256px 256px' }}
       />
 
@@ -84,7 +90,7 @@ export default function DemoCafeAroma() {
         <Link to="/" className="underline text-white hover:text-amber-200 transition-colors">Solicita el tuyo</Link>
       </div>
 
-      <nav className="sticky top-10 z-40 flex flex-col" style={{ backgroundColor: 'rgba(255, 251, 235, 0.97)', backdropFilter: 'blur(12px)' }}>
+      <nav className="sticky top-10 z-40 flex flex-col" style={{ backgroundColor: 'rgba(255, 251, 235, 0.99)' }}>
         <div className="flex items-center justify-center py-5">
           <Link to="/" className="text-center">
             <span className="block text-3xl sm:text-4xl font-serif italic tracking-wide" style={{ color: '#78350F' }}>
@@ -95,12 +101,12 @@ export default function DemoCafeAroma() {
             </span>
           </Link>
         </div>
-        <div className="flex items-center justify-center gap-4 sm:gap-8 py-2.5 border-t border-b overflow-x-auto" style={{ borderColor: '#D4A574' }}>
-          <a href="#menu" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Menu</a>
-          <a href="#historia" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Historia</a>
-          <a href="#galeria" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Galeria</a>
-          <a href="#reservar" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>Reservar</a>
-          <a href="https://wa.me/50495671234" className="hidden sm:flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap" style={{ color: '#78350F' }}>
+        <div className="flex items-center justify-center gap-4 sm:gap-8 py-0 border-t border-b overflow-x-auto" style={{ borderColor: '#D4A574' }}>
+          <a href="#menu" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap min-h-[44px] flex items-center" style={{ color: '#78350F' }}>Menu</a>
+          <a href="#historia" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap min-h-[44px] flex items-center" style={{ color: '#78350F' }}>Historia</a>
+          <a href="#galeria" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap min-h-[44px] flex items-center" style={{ color: '#78350F' }}>Galeria</a>
+          <a href="#reservar" className="text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap min-h-[44px] flex items-center" style={{ color: '#78350F' }}>Reservar</a>
+          <a href="https://wa.me/50495671234" className="hidden sm:flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] font-medium hover:opacity-70 transition-opacity whitespace-nowrap min-h-[44px]" style={{ color: '#78350F' }}>
             <WhatsAppIcon className="w-3.5 h-3.5" /> WhatsApp
           </a>
         </div>
@@ -109,10 +115,11 @@ export default function DemoCafeAroma() {
       <section className="relative min-h-[85vh] flex items-center overflow-hidden" style={{ backgroundColor: '#FDF6E3' }}>
         <div
           className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
           style={{ backgroundImage: grainOverlay, backgroundRepeat: 'repeat', backgroundSize: '256px 256px', opacity: 0.6 }}
         />
-        <div className="absolute top-20 right-[-5%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #78350F 0%, transparent 70%)' }} />
-        <div className="absolute bottom-10 left-[-3%] w-[25vw] h-[25vw] max-w-[350px] max-h-[350px] opacity-5" style={{ borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%', background: 'radial-gradient(circle, #B45309 0%, transparent 70%)' }} />
+        <div aria-hidden="true" className="absolute top-20 right-[-5%] w-[40vw] h-[40vw] max-w-[550px] max-h-[550px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #78350F 0%, transparent 70%)' }} />
+        <div aria-hidden="true" className="absolute bottom-10 left-[-3%] w-[25vw] h-[25vw] max-w-[350px] max-h-[350px] opacity-5" style={{ borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%', background: 'radial-gradient(circle, #B45309 0%, transparent 70%)' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -175,7 +182,7 @@ export default function DemoCafeAroma() {
                 style={{ borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%', background: 'linear-gradient(135deg, #78350F 0%, #B45309 50%, #D97706 100%)', boxShadow: '0 25px 60px rgba(120, 53, 15, 0.35)' }}
               >
                 <div className="absolute inset-6 flex items-center justify-center" style={{ borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%', background: 'linear-gradient(135deg, #92400E 0%, #B45309 100%)' }}>
-                  <Coffee className="w-24 h-24 sm:w-32 sm:h-32 text-amber-100 opacity-50" />
+                  <Coffee className="w-24 h-24 sm:w-32 sm:h-32 text-amber-100 opacity-50" aria-hidden="true" />
                 </div>
                 <motion.div
                   className="absolute -top-4 left-1/2 -translate-x-1/2 flex gap-3"
@@ -196,10 +203,12 @@ export default function DemoCafeAroma() {
               </div>
               <div
                 className="absolute -bottom-4 -left-4 w-24 h-24 opacity-20"
+                aria-hidden="true"
                 style={{ borderRadius: '50% 60% 40% 55% / 55% 45% 60% 40%', backgroundColor: '#B45309' }}
               />
               <div
                 className="absolute -top-8 -right-8 w-16 h-16 opacity-15"
+                aria-hidden="true"
                 style={{ borderRadius: '45% 55% 60% 40% / 50% 40% 55% 50%', backgroundColor: '#D97706' }}
               />
             </motion.div>
@@ -251,7 +260,7 @@ export default function DemoCafeAroma() {
       <div className="h-24" style={{ background: 'linear-gradient(to bottom, #FFFBEB, #FEF3C7)' }} />
 
       <section id="menu" className="py-20 relative" style={{ backgroundColor: '#FEF3C7' }}>
-        <div className="absolute top-0 right-0 w-64 h-64 opacity-5" style={{ borderRadius: '40% 60% 50% 50% / 55% 45% 55% 45%', background: 'radial-gradient(circle, #78350F 0%, transparent 70%)', transform: 'translate(30%, -30%)' }} />
+        <div aria-hidden="true" className="absolute top-0 right-0 w-64 h-64 opacity-5" style={{ borderRadius: '40% 60% 50% 50% / 55% 45% 55% 45%', background: 'radial-gradient(circle, #78350F 0%, transparent 70%)', transform: 'translate(30%, -30%)' }} />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -286,7 +295,8 @@ export default function DemoCafeAroma() {
                 >
                   <button
                     onClick={() => handleAccordionToggle(cat)}
-                    className="w-full flex items-center justify-between px-6 py-4 transition-all duration-500"
+                    aria-expanded={isOpen}
+                    className="w-full flex items-center justify-between px-6 py-4 min-h-[44px] transition-all duration-500"
                     style={{
                       backgroundColor: isOpen ? '#78350F' : 'rgba(255,255,255,0.7)',
                       color: isOpen ? '#FEF3C7' : '#78350F',
@@ -356,7 +366,11 @@ export default function DemoCafeAroma() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1400&q=80"
-            alt="Cafe de especialidad"
+            alt=""
+            aria-hidden="true"
+            width={1400}
+            height={933}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(60, 21, 24, 0.92), rgba(60, 21, 24, 0.7), rgba(60, 21, 24, 0.4))' }} />
@@ -469,7 +483,10 @@ export default function DemoCafeAroma() {
               >
                 <img
                   src={img}
-                  alt={`Cafe Aroma ${(i % galleryImages.length) + 1}`}
+                  alt=""
+                  aria-hidden="true"
+                  width={280}
+                  height={320}
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
@@ -489,9 +506,9 @@ export default function DemoCafeAroma() {
       <div className="h-24" style={{ background: 'linear-gradient(to bottom, #FEF3C7, #FFFBEB)' }} />
 
       <section id="reservar" className="py-24 relative overflow-hidden" style={{ backgroundColor: '#FFFBEB' }}>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full opacity-[0.04]" style={{ background: 'radial-gradient(circle, #78350F 0%, transparent 60%)' }} />
-        <div className="absolute top-10 left-10 w-32 h-32 opacity-5" style={{ borderRadius: '50% 60% 40% 55% / 55% 45% 60% 40%', backgroundColor: '#B45309' }} />
-        <div className="absolute bottom-10 right-10 w-20 h-20 opacity-5" style={{ borderRadius: '45% 55% 60% 40% / 50% 40% 55% 50%', backgroundColor: '#D97706' }} />
+        <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full opacity-[0.04]" style={{ background: 'radial-gradient(circle, #78350F 0%, transparent 60%)' }} />
+        <div aria-hidden="true" className="absolute top-10 left-10 w-32 h-32 opacity-5" style={{ borderRadius: '50% 60% 40% 55% / 55% 45% 60% 40%', backgroundColor: '#B45309' }} />
+        <div aria-hidden="true" className="absolute bottom-10 right-10 w-20 h-20 opacity-5" style={{ borderRadius: '45% 55% 60% 40% / 50% 40% 55% 50%', backgroundColor: '#D97706' }} />
 
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div

@@ -1,4 +1,5 @@
 import { Code2, Users, Zap, Globe, Heart, Target, Lightbulb, ArrowRight } from 'lucide-react';
+import { MayanCornerGlyph } from '../components/MayanElements';
 
 const stats = [
   { icon: Code2, value: '3+', label: 'Clientes Activos' },
@@ -76,19 +77,19 @@ export default function About() {
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="h-48 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" alt="Equipo colaborando" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <div className="aspect-[4/3] bg-slate-100 rounded-[1.5rem] overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" alt="Equipo colaborando" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-[transform,opacity] duration-700 will-change-transform" />
                 </div>
-                <div className="h-64 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" alt="Espacio de trabajo" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <div className="aspect-[3/4] bg-slate-100 rounded-[1.5rem] overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" alt="Espacio de trabajo" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-[transform,opacity] duration-700 will-change-transform" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="h-64 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80" alt="Reunión de equipo" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <div className="aspect-[3/4] bg-slate-100 rounded-[1.5rem] overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80" alt="Reunión de equipo" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-[transform,opacity] duration-700 will-change-transform" />
                 </div>
-                <div className="h-48 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1531498860502-7c67cf02f657?w=400&q=80" alt="Sesión de código" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <div className="aspect-[4/3] bg-slate-100 rounded-[1.5rem] overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1531498860502-7c67cf02f657?w=400&q=80" alt="Sesión de código" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-[transform,opacity] duration-700 will-change-transform" />
                 </div>
               </div>
             </div>
@@ -125,9 +126,13 @@ export default function About() {
 
         <div>
           <div className="text-center mb-12">
-            <h3 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              Nuestros <span className="font-serif italic">Valores</span>
-            </h3>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <MayanCornerGlyph className="text-cyan-500 opacity-30" position="left" />
+              <h3 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                Nuestros <span className="font-serif italic">Valores</span>
+              </h3>
+              <MayanCornerGlyph className="text-cyan-500 opacity-30" position="right" />
+            </div>
             <p className="text-slate-500 max-w-lg mx-auto">
               Lo que nos diferencia no es solo la tecnología — es cómo la usamos para tu beneficio
             </p>
@@ -137,8 +142,8 @@ export default function About() {
               const Icon = value.icon;
               return (
                 <div key={value.title} className="relative group p-8 bg-white rounded-[2rem] border border-slate-100 hover:border-cyan-200/60 card-hover-lift text-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-cyan-50/0 to-blue-50/0 group-hover:from-cyan-50/40 group-hover:to-blue-50/20 transition-all duration-700 pointer-events-none" />
-                  <div className="relative w-14 h-14 mx-auto mb-5 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/30 group-hover:scale-110 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-b from-cyan-50/0 to-blue-50/0 group-hover:from-cyan-50/40 group-hover:to-blue-50/20 transition-[background] duration-700 pointer-events-none" />
+                  <div className="relative w-14 h-14 mx-auto mb-5 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-[1.5rem] flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/30 group-hover:scale-110 transition-[transform,opacity] duration-500">
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                   <h4 className="relative font-display text-xl font-semibold text-slate-900 mb-3">{value.title}</h4>

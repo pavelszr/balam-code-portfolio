@@ -62,7 +62,7 @@ const WaveDivider3 = ({ color = '#fff7f7' }: { color?: string }) => (
 
 const FloatingBlob = ({ className, delay = 0 }: { className: string; delay?: number }) => (
   <motion.div
-    className={`absolute rounded-full opacity-30 blur-3xl ${className}`}
+    className={`absolute rounded-full opacity-30 blur-3xl will-change-transform hidden md:block ${className}`}
     animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
     transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay }}
     style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}
@@ -105,8 +105,7 @@ export default function DemoEstiloSalon() {
       <motion.nav
         className="sticky top-10 z-40 transition-all duration-700"
         animate={{
-          backgroundColor: scrolled ? 'rgba(255, 251, 251, 0.97)' : 'rgba(255, 251, 251, 0)',
-          backdropFilter: scrolled ? 'blur(20px)' : 'blur(0px)',
+          backgroundColor: scrolled ? 'rgba(255, 251, 251, 0.99)' : 'rgba(255, 251, 251, 0)',
           boxShadow: scrolled ? '0 1px 20px rgba(183, 110, 121, 0.08)' : '0 0px 0px rgba(0,0,0,0)',
         }}
       >
@@ -138,7 +137,7 @@ export default function DemoEstiloSalon() {
                 </a>
               ))}
             </motion.div>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden absolute right-4 top-1/2 -translate-y-1/2" style={{ color: roseGold }}>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu" aria-expanded={mobileMenuOpen} className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-3 min-w-[44px] min-h-[44px]" style={{ color: roseGold }}>
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
@@ -243,7 +242,7 @@ export default function DemoEstiloSalon() {
                 transition={{ duration: 0.8, delay: 0.7 + i * 0.1, ease: 'easeOut' }}
               >
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden shadow-lg" style={{ boxShadow: `0 4px 20px ${roseGold}30` }}>
-                  <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
+                  <img src={item.src} alt={item.label} loading="lazy" width={96} height={96} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-xs tracking-wider text-slate-400 font-light">{item.label}</span>
               </motion.div>
@@ -342,7 +341,7 @@ export default function DemoEstiloSalon() {
                   className={`group relative overflow-hidden cursor-pointer ${spanClass}`}
                   style={{ borderRadius: '2rem' }}
                 >
-                  <img src={svc.image} alt={svc.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
+                  <img src={svc.image} alt={svc.name} loading="lazy" width={600} height={400} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-out">
                     <h3 className="font-serif text-white text-lg mb-1">{svc.name}</h3>
@@ -398,7 +397,7 @@ export default function DemoEstiloSalon() {
                 className={`group relative overflow-hidden break-inside-avoid ${img.height}`}
                 style={{ borderRadius: '1.5rem' }}
               >
-                <img src={img.src} alt={`Estilo ${i + 1}`} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
+                <img src={img.src} alt={`Estilo ${i + 1}`} loading="lazy" width={600} height={450} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-rose-400/0 group-hover:bg-rose-400/15 transition-colors duration-700" />
               </motion.div>
             ))}
@@ -553,14 +552,16 @@ export default function DemoEstiloSalon() {
                 <div className="flex gap-2">
                   <button
                     onClick={prevTestimonial}
-                    className="w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-300 hover:bg-white"
+                    aria-label="Testimonio anterior"
+                    className="w-11 h-11 rounded-full flex items-center justify-center border transition-colors duration-300 hover:bg-white"
                     style={{ borderColor: `${roseGold}30`, color: roseGold }}
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </button>
                   <button
                     onClick={nextTestimonial}
-                    className="w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-300 hover:bg-white"
+                    aria-label="Siguiente testimonio"
+                    className="w-11 h-11 rounded-full flex items-center justify-center border transition-colors duration-300 hover:bg-white"
                     style={{ borderColor: `${roseGold}30`, color: roseGold }}
                   >
                     <ChevronRight className="w-4 h-4" />
@@ -576,19 +577,19 @@ export default function DemoEstiloSalon() {
 
       <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#FFF1F2' }}>
         <motion.div
-          className="absolute w-72 h-72 opacity-20 blur-3xl bg-purple-200 -top-20 -left-20"
+          className="absolute w-72 h-72 opacity-20 blur-3xl will-change-transform bg-purple-200 -top-20 -left-20 hidden md:block"
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
           style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }}
         />
         <motion.div
-          className="absolute w-96 h-96 opacity-20 blur-3xl bg-rose-300 -bottom-20 -right-20"
+          className="absolute w-96 h-96 opacity-20 blur-3xl will-change-transform bg-rose-300 -bottom-20 -right-20 hidden md:block"
           animate={{ y: [0, 15, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
           style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}
         />
         <motion.div
-          className="absolute w-48 h-48 opacity-15 blur-3xl bg-pink-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="absolute w-48 h-48 opacity-15 blur-3xl will-change-transform bg-pink-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
           style={{ borderRadius: '50% 50% 30% 70% / 50% 70% 30% 50%' }}

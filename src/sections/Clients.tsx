@@ -32,7 +32,7 @@ export default function Clients() {
               key={`${client.name}-${index}`}
               className="flex-shrink-0 grayscale hover:grayscale-0 opacity-30 hover:opacity-100 transition-all duration-700 hover:scale-105"
             >
-              <img src={client.logo} alt={client.name} className={`${client.className} w-auto object-contain`} />
+              <img src={client.logo} alt={client.name} loading="lazy" className={`${client.className} w-auto object-contain aspect-[3/2]`} />
             </div>
           ))}
         </div>

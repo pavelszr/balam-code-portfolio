@@ -142,7 +142,7 @@ export default function DemoHogarPrime() {
         Esto es un ejemplo creado por <Link to="/" className="underline font-medium hover:opacity-80 transition-opacity">Balam Code</Link> — <Link to="/" className="underline hover:opacity-80 transition-opacity">Solicita el tuyo</Link>
       </div>
 
-      <nav className={`fixed top-8 left-0 right-0 z-40 transition-all duration-700 ${scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : 'bg-transparent'}`}>
+      <nav className={`fixed top-8 left-0 right-0 z-40 transition-all duration-700 ${scrolled ? 'bg-white/[0.97] md:bg-white/80 md:backdrop-blur-xl shadow-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
           <Link to="/" className="font-serif text-2xl tracking-wide">
             <span className={`transition-colors duration-700 ${scrolled ? 'text-slate-900' : 'text-white'}`}>Hogar</span>
@@ -162,13 +162,13 @@ export default function DemoHogarPrime() {
             <a href="#contacto" className="hidden sm:inline-block px-6 py-2 border text-xs tracking-widest uppercase transition-all duration-700 hover:bg-white hover:text-slate-900" style={{ borderColor: '#D4A853', color: scrolled ? '#1E293B' : '#D4A853' }}>
               Contactar
             </a>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`md:hidden p-2 transition-colors duration-700 ${scrolled ? 'text-slate-800' : 'text-white'}`}>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors duration-700 ${scrolled ? 'text-slate-800' : 'text-white'}`} aria-label="Menu" aria-expanded={mobileMenuOpen}>
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
         {mobileMenuOpen && (
-          <div className={`md:hidden px-6 pb-4 ${scrolled ? 'bg-white/95 backdrop-blur-xl' : 'bg-slate-900/90 backdrop-blur-xl'}`}>
+          <div className={`md:hidden px-6 pb-4 ${scrolled ? 'bg-white/[0.98]' : 'bg-slate-900/95'}`}>
             <div className="flex flex-col gap-4 py-4 border-t" style={{ borderColor: scrolled ? '#e2e8f0' : 'rgba(255,255,255,0.1)' }}>
               {['propiedades', 'servicios', 'testimonios', 'contacto'].map(item => (
                 <a key={item} href={`#${item}`} onClick={() => setMobileMenuOpen(false)} className={`text-sm font-light tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-slate-600' : 'text-white/80'}`}>
@@ -183,14 +183,17 @@ export default function DemoHogarPrime() {
         )}
       </nav>
 
-      <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           animate={{ scale: [1, 1.05] }}
           transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
         >
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80" alt="Propiedad" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=75" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
         </motion.div>
+        <div className="absolute inset-0 md:hidden">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=75" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
+        </div>
         <div className="absolute inset-0 bg-slate-900/40" />
         <motion.div style={{ opacity: heroOpacity }} className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <motion.div
@@ -287,7 +290,7 @@ export default function DemoHogarPrime() {
               <button
                 key={f.name}
                 onClick={() => setActiveFilter(f.name)}
-                className={`relative text-xs tracking-[0.2em] uppercase font-light pb-3 transition-colors duration-500 ${
+                className={`relative text-xs tracking-[0.2em] uppercase font-light pb-3 min-h-[44px] flex items-center transition-colors duration-500 ${
                   activeFilter === f.name ? 'text-slate-900' : 'text-slate-400 hover:text-slate-600'
                 }`}
               >
@@ -327,12 +330,13 @@ export default function DemoHogarPrime() {
                     onClick={() => setSelectedProperty(prop)}
                   >
                     <div className="aspect-[3/4] sm:aspect-[16/9] lg:aspect-[21/9] overflow-hidden">
-                      <img src={prop.image} alt={prop.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
+                      <img src={prop.image} alt={prop.title} loading="lazy" width={600} height={400} className="w-full h-full object-cover aspect-[3/2] group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent sm:from-slate-900/80 sm:via-slate-900/20" />
                     <button
                       onClick={(e) => { e.stopPropagation(); toggleFavorite(prop.title); }}
-                      className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 sm:p-3 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all z-10"
+                      className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 sm:p-3 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all z-10"
+                      aria-label={favorites.includes(prop.title) ? 'Quitar de favoritos' : 'Agregar a favoritos'}
                     >
                       <Heart className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${favorites.includes(prop.title) ? 'text-red-400 fill-red-400' : 'text-white/70'}`} />
                     </button>
@@ -389,10 +393,11 @@ export default function DemoHogarPrime() {
                         onClick={() => setSelectedProperty(p!)}
                       >
                         <div className="relative aspect-[4/3] overflow-hidden mb-6">
-                          <img src={p!.image} alt={p!.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
+                          <img src={p!.image} alt={p!.title} loading="lazy" width={600} height={400} className="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
                           <button
                             onClick={(e) => { e.stopPropagation(); toggleFavorite(p!.title); }}
-                            className="absolute top-4 right-4 p-2.5 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all"
+                            className="absolute top-4 right-4 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all"
+                            aria-label={favorites.includes(p!.title) ? 'Quitar de favoritos' : 'Agregar a favoritos'}
                           >
                             <Heart className={`w-4 h-4 transition-colors ${favorites.includes(p!.title) ? 'text-red-400 fill-red-400' : 'text-white/70'}`} />
                           </button>
@@ -494,7 +499,7 @@ export default function DemoHogarPrime() {
               { src: '/brands/Ficohsa_logo.png', name: 'Ficohsa' },
             ].map(brand => (
               <div key={brand.name} className="group flex items-center justify-center h-14 w-36">
-                <img src={brand.src} alt={brand.name} className="h-12 max-w-[150px] w-auto object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
+                <img src={brand.src} alt={brand.name} loading="lazy" width={150} height={48} className="h-12 max-w-[150px] w-auto object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
               </div>
             ))}
           </div>
@@ -532,16 +537,21 @@ export default function DemoHogarPrime() {
             </AnimatePresence>
           </div>
 
-          <div className="flex items-center justify-center gap-3 mt-8">
+          <div className="flex items-center justify-center gap-1 mt-8">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveTestimonial(i)}
-                className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                  activeTestimonial === i ? 'w-8' : 'bg-slate-300'
-                }`}
-                style={activeTestimonial === i ? { backgroundColor: '#D4A853' } : {}}
-              />
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2"
+                aria-label={`Testimonio ${i + 1}`}
+              >
+                <span
+                  className={`block h-2 rounded-full transition-all duration-500 ${
+                    activeTestimonial === i ? 'w-8' : 'w-2 bg-slate-300'
+                  }`}
+                  style={activeTestimonial === i ? { backgroundColor: '#D4A853' } : {}}
+                />
+              </button>
             ))}
           </div>
         </div>
@@ -549,7 +559,7 @@ export default function DemoHogarPrime() {
 
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80" alt="Propiedad" loading="lazy" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80" alt="" aria-hidden="true" loading="lazy" width={1600} height={1067} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-slate-900/60" />
         </div>
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
@@ -682,11 +692,12 @@ export default function DemoHogarPrime() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden">
-                <img src={selectedProperty.image} alt={selectedProperty.title} loading="lazy" className="w-full h-full object-cover" />
+                <img src={selectedProperty.image} alt={selectedProperty.title} loading="lazy" width={600} height={400} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
                 <button
                   onClick={() => setSelectedProperty(null)}
-                  className="absolute top-4 right-4 p-2.5 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all"
+                  className="absolute top-4 right-4 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/30 transition-all"
+                  aria-label="Cerrar"
                 >
                   <X className="w-5 h-5 text-white" />
                 </button>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Rocket, Zap, Users, Shield, ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
+import { MayanPyramidIcon } from '../components/MayanElements';
 
 const reasons = [
   {
@@ -46,14 +47,14 @@ export default function Impact() {
   return (
     <section className="py-24 lg:py-32 bg-slate-950 relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px]" />
-        <div className="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px]" />
+        <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[80px]" />
+        <div className="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[80px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium rounded-full mb-6">
-            <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" />
+            <MayanPyramidIcon className="text-cyan-400" />
             ¿Por qué Balam Code?
           </span>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -130,15 +131,17 @@ export default function Impact() {
                 })()}
               </div>
 
-              <div className="flex gap-1.5 mt-8 relative z-10">
+              <div className="flex gap-1 mt-8 relative z-10">
                 {reasons.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveIndex(i)}
-                    className={`h-1.5 rounded-full transition-all duration-500 ${
+                    className={`min-w-[44px] min-h-[44px] p-2 flex items-center justify-center`}
+                  >
+                    <span className={`block h-1.5 rounded-full transition-all duration-500 ${
                       i === activeIndex ? 'w-8 bg-gradient-to-r from-cyan-500 to-blue-500' : 'w-2 bg-slate-700 hover:bg-slate-600'
-                    }`}
-                  />
+                    }`} />
+                  </button>
                 ))}
               </div>
             </div>

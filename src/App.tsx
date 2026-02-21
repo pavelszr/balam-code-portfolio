@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
+import { MayanDivider } from './components/MayanElements';
 import Hero from './sections/Hero';
 import Clients from './sections/Clients';
 import Features from './sections/Features';
@@ -38,13 +39,17 @@ function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <div className="bg-slate-950"><MayanDivider /></div>
         <Clients />
         <Features />
+        <div className="bg-white"><MayanDivider /></div>
         <Philosophy />
         <Pricing />
+        <div className="bg-slate-950"><MayanDivider /></div>
         <Portfolio />
         <EcommerceShowcase />
         <Impact />
+        <div className="bg-slate-950"><MayanDivider /></div>
         <Testimonials />
         <FAQ />
         <About />

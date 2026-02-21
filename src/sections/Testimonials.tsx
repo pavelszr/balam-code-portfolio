@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Quote, ChevronLeft, ChevronRight, Star, MapPin } from 'lucide-react';
+import { MayanStepPattern } from '../components/MayanElements';
 
 const testimonials = [
   {
@@ -66,8 +67,8 @@ export default function Testimonials() {
 
   return (
     <section id="testimonios" className="py-24 lg:py-32 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-50 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-60" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-50 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl opacity-40" />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-50 rounded-full -translate-x-1/2 -translate-y-1/2 blur-xl opacity-60" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-50 rounded-full translate-x-1/3 translate-y-1/3 blur-xl opacity-40" />
 
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-16">
@@ -75,10 +76,14 @@ export default function Testimonials() {
             <Star className="w-3.5 h-3.5 fill-cyan-500 text-cyan-500" />
             Testimonios
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 tracking-tight">
-            Ellos ya{' '}
-            <span className="font-serif italic text-gradient-cyan">Dieron el Paso</span>
-          </h2>
+          <div className="flex items-center justify-center gap-3">
+            <MayanStepPattern className="text-cyan-500 opacity-30" />
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 tracking-tight">
+              Ellos ya{' '}
+              <span className="font-serif italic text-gradient-cyan">Dieron el Paso</span>
+            </h2>
+            <MayanStepPattern className="text-cyan-500 opacity-30 scale-x-[-1]" />
+          </div>
           <p className="text-slate-500 text-lg max-w-xl mx-auto">
             Empresas reales con resultados reales. El siguiente caso de éxito puede ser el tuyo.
           </p>
@@ -126,7 +131,7 @@ export default function Testimonials() {
                 <button
                   key={item.id}
                   onClick={() => goTo(index, index > currentIndex ? 'next' : 'prev')}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-500 ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-500 min-h-[44px] ${
                     index === currentIndex
                       ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
                       : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
@@ -144,10 +149,10 @@ export default function Testimonials() {
               ))}
             </div>
             <div className="flex items-center gap-2">
-              <button onClick={prevTestimonial} className="p-2.5 rounded-full bg-slate-100 hover:bg-slate-200 hover:scale-105 text-slate-600 transition-all duration-300">
+              <button onClick={prevTestimonial} className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 hover:scale-105 text-slate-600 transition-all duration-300">
                 <ChevronLeft className="w-5 h-5" />
               </button>
-              <button onClick={nextTestimonial} className="p-2.5 rounded-full bg-slate-100 hover:bg-slate-200 hover:scale-105 text-slate-600 transition-all duration-300">
+              <button onClick={nextTestimonial} className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 hover:scale-105 text-slate-600 transition-all duration-300">
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>

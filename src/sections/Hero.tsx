@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
+import { MayanStepPattern } from '../components/MayanElements';
 import gsap from 'gsap';
 
 const HeroBackground3D = lazy(() => import('../components/HeroBackground3D'));
@@ -73,8 +74,8 @@ export default function Hero() {
           <HeroBackground3D />
         </Suspense>
 
-        <div className="hero-orb hero-orb-1 hidden md:block absolute top-[15%] right-[10%] w-[500px] h-[500px] rounded-full bg-cyan-500/[0.07] blur-[120px] pointer-events-none z-[1]" />
-        <div className="hero-orb hero-orb-2 hidden md:block absolute bottom-[20%] left-[5%] w-[400px] h-[400px] rounded-full bg-blue-500/[0.05] blur-[100px] pointer-events-none z-[1]" />
+        <div className="hero-orb hero-orb-1 hidden md:block absolute top-[15%] right-[10%] w-[500px] h-[500px] rounded-full bg-cyan-500/[0.07] blur-[80px] pointer-events-none z-[1]" />
+        <div className="hero-orb hero-orb-2 hidden md:block absolute bottom-[20%] left-[5%] w-[400px] h-[400px] rounded-full bg-blue-500/[0.05] blur-[80px] pointer-events-none z-[1]" />
 
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-[2]" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/30 to-transparent z-[2]" />
@@ -82,7 +83,7 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-16 lg:pb-24">
         <div className="max-w-4xl">
-          <div className="hero-badge inline-flex items-center gap-2.5 px-5 py-2.5 bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-full mb-10 shadow-[0_0_30px_rgba(6,182,212,0.06)]">
+          <div className="hero-badge inline-flex items-center gap-2.5 px-5 py-2.5 bg-white/[0.06] border border-white/[0.08] rounded-full mb-10 shadow-[0_0_30px_rgba(6,182,212,0.06)]">
             <span className="relative w-2 h-2">
               <span className="absolute inset-0 bg-emerald-400 rounded-full animate-ping opacity-75" />
               <span className="relative block w-2 h-2 bg-emerald-400 rounded-full" />
@@ -138,6 +139,7 @@ export default function Hero() {
           </div>
 
           <div className="hero-stats flex items-center gap-10 flex-wrap">
+            <MayanStepPattern className="text-cyan-500 opacity-20 mr-2" />
             {[
               { end: 3, suffix: 'x', label: 'Más Conversiones' },
               { end: 7, suffix: ' Días', label: 'Entrega Garantizada' },
@@ -157,11 +159,12 @@ export default function Hero() {
 
       <button
         onClick={() => document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' })}
-        className="hero-scroll absolute bottom-6 left-1/2 -translate-x-1/2 text-white/30 hover:text-cyan-400 transition-all duration-300 z-10 group"
+        className="hero-scroll absolute bottom-6 left-1/2 -translate-x-1/2 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-white/30 hover:text-cyan-400 transition-all duration-300 z-10 group"
+        aria-label="Desplazar hacia abajo"
       >
         <div className="relative">
           <div className="absolute -inset-4 bg-cyan-500/0 group-hover:bg-cyan-500/10 rounded-full transition-all duration-500" />
-          <ChevronDown className="w-8 h-8 animate-bounce relative" />
+          <ChevronDown className="w-8 h-8 animate-bounce relative" aria-hidden="true" />
         </div>
       </button>
     </section>

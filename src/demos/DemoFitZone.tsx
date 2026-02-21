@@ -191,6 +191,11 @@ export default function DemoFitZone() {
         @media (max-width: 639px) {
           .class-card { transform: none !important; margin-left: 0 !important; }
         }
+        @media (max-width: 767px) {
+          .neon-glow-text { animation: none; text-shadow: 0 0 10px rgba(132, 204, 22, 0.3); }
+          .pulse-glow-btn { animation: none; box-shadow: 0 0 15px rgba(132, 204, 22, 0.2); }
+          .neon-input:focus { box-shadow: 0 0 8px rgba(132, 204, 22, 0.15); }
+        }
       `}</style>
 
       <div className="fixed top-0 left-0 right-0 z-[60] bg-zinc-950 border-b border-lime-500/30 text-white text-center py-2.5 text-sm font-medium">
@@ -206,7 +211,7 @@ export default function DemoFitZone() {
                 href={item.href}
                 onMouseEnter={() => setHoveredNav(i)}
                 onMouseLeave={() => setHoveredNav(null)}
-                className="w-10 h-10 flex items-center justify-center rounded-lg text-zinc-500 hover:text-lime-400 hover:bg-lime-500/10 transition-all duration-200"
+                className="w-10 h-10 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-zinc-500 hover:text-lime-400 hover:bg-lime-500/10 transition-all duration-200"
               >
                 <Icon className="w-5 h-5" />
               </a>
@@ -225,17 +230,18 @@ export default function DemoFitZone() {
         <div className="mt-6 w-6 h-px bg-zinc-800" />
         <a
           href="https://wa.me/50431567890"
-          className="w-10 h-10 flex items-center justify-center rounded-lg text-lime-400 hover:bg-lime-500/10 transition-all"
+          className="w-10 h-10 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-lime-400 hover:bg-lime-500/10 transition-all"
+          aria-label="WhatsApp"
         >
           <WhatsAppIcon className="w-5 h-5" />
         </a>
       </nav>
 
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800/50 flex lg:hidden items-center justify-around py-2">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950 border-t border-zinc-800/50 flex lg:hidden items-center justify-around py-2">
         {navItems.map((item) => {
           const Icon = item.icon;
           return (
-            <a key={item.label} href={item.href} className="flex flex-col items-center gap-0.5 text-zinc-500 hover:text-lime-400 transition-colors px-3 py-1">
+            <a key={item.label} href={item.href} className="flex flex-col items-center gap-0.5 text-zinc-500 hover:text-lime-400 transition-colors px-3 py-1 min-w-[44px] min-h-[44px] justify-center">
               <Icon className="w-5 h-5" />
               <span className="text-[10px] uppercase tracking-wider font-medium">{item.label}</span>
             </a>
@@ -245,16 +251,16 @@ export default function DemoFitZone() {
 
       <section
         ref={heroRef}
-        className="relative h-screen flex items-center overflow-hidden"
+        className="relative min-h-[100dvh] flex items-center overflow-hidden"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }}
       >
         <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80" alt="Gimnasio" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=75" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A]/95 via-[#0A0A0A]/80 to-transparent" />
         </motion.div>
 
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-lime-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-lime-500/5 rounded-full blur-3xl hidden md:block" />
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl hidden md:block" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:pl-24">
           <motion.div
@@ -343,7 +349,7 @@ export default function DemoFitZone() {
               { src: '/brands/oakley.svg', name: 'Oakley' },
             ].map(brand => (
               <div key={brand.name} className="group w-32 h-10 flex items-center justify-center">
-                <img src={brand.src} alt={brand.name} className="max-w-full max-h-full object-contain opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 invert" />
+                <img src={brand.src} alt={brand.name} loading="lazy" width={128} height={40} className="max-w-full max-h-full object-contain opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 invert" />
               </div>
             ))}
           </div>
@@ -386,7 +392,7 @@ export default function DemoFitZone() {
                 }}
               >
                 <div className={`w-20 sm:w-36 flex-shrink-0 overflow-hidden class-inner-${i}`}>
-                  <img src={cls.image} alt={cls.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={cls.image} alt={cls.name} loading="lazy" width={400} height={267} className="w-full h-full object-cover aspect-[3/2] group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className={`flex-1 p-3 sm:p-5 flex items-center justify-between class-inner-${i}`}>
                   <div>
@@ -607,7 +613,7 @@ export default function DemoFitZone() {
       <section className="relative overflow-hidden" style={{ clipPath: 'polygon(0 8%, 100% 0, 100% 92%, 0 100%)' }}>
         <div className="flex flex-col lg:flex-row min-h-[50vh]">
           <div className="flex-1 bg-zinc-950 flex items-center justify-center p-12 lg:p-20 relative">
-            <div className="absolute top-0 right-0 w-40 h-40 bg-lime-500/5 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-lime-500/5 rounded-full blur-3xl hidden md:block" />
             <div className="relative z-10 max-w-md">
               <motion.div
                 initial={{ opacity: 0, x: -40 }}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Clock, MessageCircle, Paintbrush, Gauge, Palette, Smartphone, Search, Zap, Shield, Server, Globe } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
+import { MayanCornerGlyph, MayanStepPattern } from '../components/MayanElements';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -45,7 +46,7 @@ function DiagnosticShuffler() {
               <p className="text-xs text-slate-400 font-mono uppercase tracking-wider">{cards[cardIndex].label}</p>
               <p className="text-sm font-semibold text-slate-800 mt-1">{cards[cardIndex].metric}</p>
             </div>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 flex items-center justify-center">
+            <div aria-hidden="true" className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-50 to-blue-50 flex items-center justify-center">
               <div className="w-5 h-5 rounded-full border-2 border-cyan-500 border-t-transparent animate-spin" />
             </div>
           </div>
@@ -88,7 +89,7 @@ function TelemetryTypewriter() {
   return (
     <div className="bg-slate-900 rounded-2xl p-5 border border-slate-800 font-mono text-sm h-48 flex flex-col">
       <div className="flex items-center gap-2 mb-4">
-        <span className="relative flex h-2.5 w-2.5">
+        <span aria-hidden="true" className="relative flex h-2.5 w-2.5">
           <span className="animate-pulse-live absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500" />
         </span>
@@ -160,7 +161,7 @@ function CursorScheduler() {
         {days.map((day, i) => (
           <div
             key={day}
-            className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-semibold transition-all duration-300 ${
+            className={`w-10 h-10 min-w-[44px] min-h-[44px] rounded-lg flex items-center justify-center text-xs font-semibold transition-all duration-300 ${
               activeDays.includes(i)
                 ? 'bg-cyan-500 text-white scale-90'
                 : activeDay === i
@@ -181,6 +182,7 @@ function CursorScheduler() {
       </div>
       {cursorVisible && (
         <svg
+          aria-hidden="true"
           className="absolute pointer-events-none transition-all duration-500 ease-out"
           style={{ left: cursorPos.x, top: cursorPos.y }}
           width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -241,10 +243,14 @@ export default function Features() {
     <section id="servicios" ref={sectionRef} className="py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-20">
-          <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-50 border border-cyan-100 text-cyan-700 text-sm font-medium rounded-full mb-6">
-            <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full" />
-            Nuestros Servicios
-          </span>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <MayanCornerGlyph className="text-cyan-500 opacity-40" position="left" />
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-50 border border-cyan-100 text-cyan-700 text-sm font-medium rounded-full">
+              <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full" />
+              Nuestros Servicios
+            </span>
+            <MayanCornerGlyph className="text-cyan-500 opacity-40" position="right" />
+          </div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
             Todo Incluido, Cero{' '}
             <span className="font-serif italic text-gradient-cyan">Sorpresas</span>
@@ -273,12 +279,12 @@ export default function Features() {
           </div>
         </div>
 
-        <div className="feature-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
+        <div className="feature-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-24" style={{ contain: 'content' }}>
           {services.map((service) => {
             const Icon = service.icon;
             return (
               <div key={service.title} className="feature-card card-hover-lift group p-6 rounded-[1.5rem] bg-white border border-slate-100 hover:border-cyan-200/60 cursor-default relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/0 via-transparent to-blue-50/0 group-hover:from-cyan-50/50 group-hover:to-blue-50/30 transition-all duration-700 pointer-events-none" />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-cyan-50/0 via-transparent to-blue-50/0 group-hover:from-cyan-50/50 group-hover:to-blue-50/30 transition-all duration-700 pointer-events-none" />
                 <div className={`relative w-11 h-11 ${service.bg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
                   <Icon className={`w-5 h-5 bg-gradient-to-br ${service.accent} bg-clip-text`} style={{ color: 'rgb(6, 182, 212)' }} />
                 </div>
@@ -291,17 +297,21 @@ export default function Features() {
 
         <div className="relative">
           <div className="text-center mb-16">
-            <h3 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              ¿Cómo <span className="font-serif italic">Funciona</span>?
-            </h3>
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <MayanStepPattern className="text-cyan-500 opacity-30" />
+              <h3 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                ¿Cómo <span className="font-serif italic">Funciona</span>?
+              </h3>
+              <MayanStepPattern className="text-cyan-500 opacity-30 scale-x-[-1]" />
+            </div>
             <p className="text-slate-500 max-w-xl mx-auto">De la idea al lanzamiento en 4 pasos simples</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            <div className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-cyan-300 to-transparent" />
+            <div aria-hidden="true" className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-cyan-300 to-transparent" />
             {processSteps.map((step) => (
               <div key={step.step} className="relative text-center group">
                 <div className="relative inline-flex items-center justify-center w-24 h-24 mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-[1.5rem] rotate-3 opacity-10 group-hover:opacity-20 group-hover:rotate-6 transition-all duration-500" />
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-[1.5rem] rotate-3 opacity-10 group-hover:opacity-20 group-hover:rotate-6 transition-all duration-500" />
                   <div className="relative w-full h-full bg-white border-2 border-cyan-100 rounded-[1.5rem] flex items-center justify-center group-hover:border-cyan-300 group-hover:shadow-lg group-hover:shadow-cyan-100/50 transition-all duration-500">
                     <span className="font-mono text-2xl font-bold text-cyan-600">{step.step}</span>
                   </div>

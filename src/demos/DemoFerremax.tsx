@@ -88,13 +88,13 @@ export default function DemoFerremax() {
               <Phone className="w-4 h-4" />
               <span>2567-8901</span>
             </a>
-            <button onClick={() => setCartCount(c => c)} className="relative p-2.5 border-2 border-neutral-700 bg-neutral-950 hover:border-yellow-500 transition-colors">
+            <button onClick={() => setCartCount(c => c)} aria-label="Carrito de compras" className="relative min-w-[44px] min-h-[44px] flex items-center justify-center border-2 border-neutral-700 bg-neutral-950 hover:border-yellow-500 transition-colors">
               <ShoppingCart className="w-5 h-5 text-neutral-400" />
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 w-5 h-5 bg-yellow-500 text-neutral-950 text-xs font-mono font-bold flex items-center justify-center">{cartCount}</span>
               )}
             </button>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 border-2 border-neutral-700 bg-neutral-950 hover:border-yellow-500 transition-colors">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menú" aria-expanded={mobileMenuOpen} className="lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center border-2 border-neutral-700 bg-neutral-950 hover:border-yellow-500 transition-colors">
               {mobileMenuOpen ? <X className="w-5 h-5 text-neutral-400" /> : <Menu className="w-5 h-5 text-neutral-400" />}
             </button>
           </div>
@@ -141,7 +141,7 @@ export default function DemoFerremax() {
       <div className="h-2" style={{ background: cautionStripe }} />
 
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a0a0a 0%, #171717 50%, #0a0a0a 100%)' }}>
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 49px, #666 49px, #666 50px), repeating-linear-gradient(90deg, transparent, transparent 49px, #666 49px, #666 50px)' }} />
+        <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 49px, #666 49px, #666 50px), repeating-linear-gradient(90deg, transparent, transparent 49px, #666 49px, #666 50px)' }} />
         <div className="max-w-[1400px] mx-auto px-4 py-20 md:py-32 relative z-10">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="flex items-center gap-4 mb-6">
@@ -268,9 +268,9 @@ export default function DemoFerremax() {
                     transition={{ delay: i * 0.05 }}
                     className="group border-b-2 border-r-2 border-neutral-800 bg-neutral-950 hover:bg-neutral-900 transition-colors relative"
                   >
-                    <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-500 transition-colors pointer-events-none z-10" />
+                    <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-500 transition-colors pointer-events-none z-10" aria-hidden="true" />
                     <div className="relative overflow-hidden bg-neutral-900 border-b-2 border-neutral-800">
-                      <img src={product.image} alt={product.name} loading="lazy" className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <img src={product.image} alt={product.name} width={400} height={300} loading="lazy" className="w-full h-48 aspect-[4/3] object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
                       {product.badge && (
                         <span className={`absolute top-0 left-0 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider ${
                           product.badge === 'OFERTA' ? 'bg-red-600 text-white' : product.badge === 'MAS VENDIDO' ? 'bg-yellow-500 text-neutral-950' : 'bg-orange-500 text-white'
@@ -280,7 +280,8 @@ export default function DemoFerremax() {
                       )}
                       <button
                         onClick={() => setCartCount(c => c + 1)}
-                        className="absolute bottom-0 right-0 p-3 bg-yellow-500 hover:bg-yellow-400 text-neutral-950 transition-colors"
+                        aria-label={`Agregar ${product.name} al carrito`}
+                        className="absolute bottom-0 right-0 min-w-[44px] min-h-[44px] flex items-center justify-center bg-yellow-500 hover:bg-yellow-400 text-neutral-950 transition-colors"
                       >
                         <ShoppingCart className="w-4 h-4" />
                       </button>
@@ -336,7 +337,7 @@ export default function DemoFerremax() {
                 className="border-2 border-neutral-800 p-8 flex items-center justify-center hover:border-yellow-500 hover:bg-neutral-800/30 transition-colors group h-28"
               >
                 <div className="w-44 h-12 opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0 flex items-center justify-center">
-                  <img src={brand.src} alt={brand.name} className="max-w-full max-h-full object-contain invert brightness-200" />
+                  <img src={brand.src} alt="" aria-hidden="true" width={176} height={48} loading="lazy" className="max-w-full max-h-full object-contain invert brightness-200" />
                 </div>
               </motion.div>
             ))}
@@ -345,7 +346,7 @@ export default function DemoFerremax() {
       </section>
 
       <section id="contacto" className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a0a0a 0%, #171717 100%)' }}>
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 49px, #EAB308 49px, #EAB308 50px), repeating-linear-gradient(90deg, transparent, transparent 49px, #EAB308 49px, #EAB308 50px)' }} />
+        <div className="absolute inset-0 opacity-[0.02]" aria-hidden="true" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 49px, #EAB308 49px, #EAB308 50px), repeating-linear-gradient(90deg, transparent, transparent 49px, #EAB308 49px, #EAB308 50px)' }} />
         <div className="h-2" style={{ background: cautionStripe }} />
         <div className="max-w-[1400px] mx-auto px-4 py-20 md:py-28 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

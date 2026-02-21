@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, ArrowRight, Heart } from 'lucide-react';
 import { WhatsAppIcon, InstagramIcon } from '../components/SocialIcons';
+import { MayanSerpent } from '../components/MayanElements';
 
 const footerLinks = {
   services: [
@@ -29,7 +30,7 @@ export default function Footer() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-6">
-                    <img src="/balam-logo.png" alt="Balam Code" className="h-14 w-auto brightness-0 invert" />
+                    <img src="/balam-logo.png" alt="Balam Code" width={56} height={56} loading="lazy" className="h-14 w-auto brightness-0 invert" />
                   </div>
                   <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight tracking-tight">
                     Cada día que pasa,{' '}
@@ -62,8 +63,8 @@ export default function Footer() {
                 <div className="bg-slate-900/50 border border-slate-800 rounded-[2rem] p-8 backdrop-blur-sm">
                   <h3 className="font-display text-lg font-semibold mb-6">Información de Contacto</h3>
                   <div className="space-y-5">
-                    <a href="mailto:contacto@balamcode.com" className="flex items-center gap-4 group">
-                      <div className="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                    <a href="mailto:contacto@balamcode.com" className="flex items-center gap-4 group min-h-[44px]">
+                      <div className="w-11 h-11 bg-cyan-500/10 rounded-xl flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
                         <Mail className="w-5 h-5 text-cyan-400" />
                       </div>
                       <div>
@@ -71,8 +72,8 @@ export default function Footer() {
                         <p className="text-slate-300 group-hover:text-white transition-colors">contacto@balamcode.com</p>
                       </div>
                     </a>
-                    <a href="tel:+50433672227" className="flex items-center gap-4 group">
-                      <div className="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                    <a href="tel:+50433672227" className="flex items-center gap-4 group min-h-[44px]">
+                      <div className="w-11 h-11 bg-cyan-500/10 rounded-xl flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
                         <Phone className="w-5 h-5 text-cyan-400" />
                       </div>
                       <div>
@@ -80,8 +81,8 @@ export default function Footer() {
                         <p className="text-slate-300 group-hover:text-white transition-colors">+504 3367-2227</p>
                       </div>
                     </a>
-                    <a href="https://wa.me/50433672227?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                      <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                    <a href="https://wa.me/50433672227?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group min-h-[44px]">
+                      <div className="w-11 h-11 bg-green-500/10 rounded-xl flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
                         <WhatsAppIcon className="w-5 h-5 text-green-400" />
                       </div>
                       <div>
@@ -90,7 +91,7 @@ export default function Footer() {
                       </div>
                     </a>
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center">
+                      <div className="w-11 h-11 bg-cyan-500/10 rounded-xl flex items-center justify-center">
                         <MapPin className="w-5 h-5 text-cyan-400" />
                       </div>
                       <div>
@@ -116,20 +117,20 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
             <div className="col-span-2 md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <img src="/balam-logo.png" alt="Balam Code" className="h-12 w-auto brightness-0 invert" />
+                <img src="/balam-logo.png" alt="Balam Code" width={48} height={48} loading="lazy" className="h-12 w-auto brightness-0 invert" />
               </div>
               <p className="text-slate-400 text-sm mb-6 max-w-xs leading-relaxed">
                 Desarrollo web profesional desde Honduras para el mundo.
                 Landing pages, e-commerce y soluciones digitales a medida.
               </p>
               <div className="flex gap-3">
-                <a href="https://wa.me/50433672227?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-green-500/10 hover:border-green-500/20 hover:text-green-400 transition-all duration-300">
+                <a href="https://wa.me/50433672227?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-green-500/10 hover:border-green-500/20 hover:text-green-400 transition-all duration-300">
                   <WhatsAppIcon className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com/balamcodehn/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500/10 hover:border-pink-500/20 hover:text-pink-400 transition-all duration-300">
+                <a href="https://www.instagram.com/balamcodehn/" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500/10 hover:border-pink-500/20 hover:text-pink-400 transition-all duration-300">
                   <InstagramIcon className="w-5 h-5" />
                 </a>
-                <a href="mailto:contacto@balamcode.com" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500/10 hover:border-cyan-500/20 hover:text-cyan-400 transition-all duration-300">
+                <a href="mailto:contacto@balamcode.com" className="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500/10 hover:border-cyan-500/20 hover:text-cyan-400 transition-all duration-300">
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
@@ -139,7 +140,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} className="text-sm text-slate-500 hover:text-cyan-400 transition-colors flex items-center gap-1 group">
+                    <a href={link.href} className="text-sm text-slate-500 hover:text-cyan-400 transition-colors flex items-center gap-1 group min-h-[44px]">
                       <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                       {link.label}
                     </a>
@@ -152,7 +153,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} className="text-sm text-slate-500 hover:text-cyan-400 transition-colors flex items-center gap-1 group">
+                    <a href={link.href} className="text-sm text-slate-500 hover:text-cyan-400 transition-colors flex items-center gap-1 group min-h-[44px]">
                       <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                       {link.label}
                     </a>
@@ -166,9 +167,12 @@ export default function Footer() {
         <div className="border-t border-slate-800/50">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-sm text-slate-600 flex items-center gap-1">
-                © 2026 Balam Code. Hecho con <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> en Honduras.
-              </p>
+              <div className="flex items-center gap-3">
+                <MayanSerpent className="text-slate-700 opacity-50" />
+                <p className="text-sm text-slate-600 flex items-center gap-1">
+                  © 2026 Balam Code. Hecho con <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> en Honduras.
+                </p>
+              </div>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2 w-2">
@@ -177,8 +181,8 @@ export default function Footer() {
                   </span>
                   <span className="text-xs text-slate-500 font-mono">Sistema Operativo</span>
                 </div>
-                <a href="#" className="text-sm text-slate-600 hover:text-slate-400 transition-colors">Privacidad</a>
-                <a href="#" className="text-sm text-slate-600 hover:text-slate-400 transition-colors">Términos</a>
+                <a href="#" className="text-sm text-slate-600 hover:text-slate-400 transition-colors min-h-[44px] flex items-center">Privacidad</a>
+                <a href="#" className="text-sm text-slate-600 hover:text-slate-400 transition-colors min-h-[44px] flex items-center">Términos</a>
               </div>
             </div>
           </div>

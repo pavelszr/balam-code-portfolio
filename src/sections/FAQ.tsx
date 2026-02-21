@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
+import { MayanHeadingDecor } from '../components/MayanElements';
 
 const faqs = [
   {
@@ -42,6 +43,7 @@ export default function FAQ() {
                 <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full" />
                 Preguntas Frecuentes
               </span>
+              <MayanHeadingDecor className="mb-4" />
               <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
                 Antes de{' '}
                 <span className="font-serif italic text-gradient-cyan">Decidir</span>
@@ -79,12 +81,12 @@ export default function FAQ() {
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left group"
+                    className="w-full flex items-center justify-between p-5 sm:p-6 min-h-[44px] text-left group"
                   >
                     <span className={`font-semibold pr-4 transition-colors duration-300 ${isOpen ? 'text-cyan-700' : 'text-slate-900 group-hover:text-slate-700'}`}>
                       {faq.question}
                     </span>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
                       isOpen ? 'bg-gradient-to-br from-cyan-500 to-blue-500 rotate-180 shadow-lg shadow-cyan-500/20' : 'bg-slate-100 group-hover:bg-slate-200'
                     }`}>
                       <ChevronDown className={`w-4 h-4 transition-colors ${isOpen ? 'text-white' : 'text-slate-500'}`} />

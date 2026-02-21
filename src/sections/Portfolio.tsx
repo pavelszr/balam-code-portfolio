@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Eye, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { MayanCornerGlyph } from '../components/MayanElements';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -154,7 +155,7 @@ export default function Portfolio() {
             } else {
               gsap.set(card, {
                 scale: 1 - progress * 0.08,
-                filter: `blur(${progress * 8}px)`,
+                filter: `blur(${progress * 4}px)`,
                 opacity: 1 - progress * 0.4,
               });
             }
@@ -171,10 +172,14 @@ export default function Portfolio() {
     <section id="portfolio" ref={sectionRef} className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-50 border border-cyan-100 text-cyan-700 text-sm font-medium rounded-full mb-6">
-            <Eye className="w-3.5 h-3.5" />
-            Portafolio de Demos
-          </span>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <MayanCornerGlyph className="text-cyan-500 opacity-40" position="left" />
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-50 border border-cyan-100 text-cyan-700 text-sm font-medium rounded-full">
+              <Eye className="w-3.5 h-3.5" />
+              Portafolio de Demos
+            </span>
+            <MayanCornerGlyph className="text-cyan-500 opacity-40" position="right" />
+          </div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
             Así se Verá{' '}
             <span className="font-serif italic text-gradient-cyan">Tu Negocio</span>
@@ -192,14 +197,16 @@ export default function Portfolio() {
               className="stack-card sticky top-24 bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden group/card"
             >
               <div className="grid lg:grid-cols-2">
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden aspect-video lg:aspect-auto">
                   <img
                     src={project.image}
                     alt={project.name}
+                    width={400}
+                    height={225}
                     loading="lazy"
                     className="w-full h-64 lg:h-full object-cover group-hover/card:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
                   <div className="absolute top-6 left-6 flex gap-2">
                     <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-700 text-xs font-semibold rounded-full">
                       {project.type}

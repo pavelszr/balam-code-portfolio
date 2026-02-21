@@ -83,7 +83,7 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
 
 const FloatingBlob = ({ className, delay = 0 }: { className: string; delay?: number }) => (
   <motion.div
-    className={`absolute rounded-full opacity-30 blur-3xl ${className}`}
+    className={`absolute rounded-full opacity-30 blur-3xl will-change-transform hidden md:block ${className}`}
     animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
     transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay }}
     style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}
@@ -166,13 +166,18 @@ export default function DemoSonrisas() {
           box-shadow: 0 0 15px rgba(6, 182, 212, 0.2), 0 0 30px rgba(6, 182, 212, 0.1);
           border-color: #06B6D4;
         }
+        @media (max-width: 767px) {
+          .glow-btn { animation: none; box-shadow: 0 0 15px rgba(6, 182, 212, 0.2); }
+          .shimmer-gold-text { animation: none; background-size: 100% auto; }
+          .neon-input-dental:focus { box-shadow: 0 0 8px rgba(6, 182, 212, 0.15); }
+        }
       `}</style>
 
       <div className="fixed top-0 left-0 right-0 z-[60] bg-slate-900 border-b border-cyan-500/30 text-white text-center py-2.5 text-sm font-medium">
         <Sparkles className="w-3.5 h-3.5 inline-block mr-1 text-cyan-400" /> Esto es un ejemplo creado por <Link to="/" className="underline font-bold text-cyan-400 hover:text-cyan-300 transition-colors">Balam Code</Link> — <Link to="/" className="underline hover:text-cyan-300 transition-colors">Solicita el tuyo</Link>
       </div>
 
-      <motion.nav className={`fixed top-10 left-0 right-0 z-50 transition-all duration-500 ${navSolid ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
+      <motion.nav className={`fixed top-10 left-0 right-0 z-50 transition-all duration-500 ${navSolid ? 'bg-white/[0.97] md:bg-white/95 md:backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2.5">
             <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-500 ${navSolid ? 'bg-cyan-500' : 'bg-white/15 backdrop-blur-sm'}`}>
@@ -196,7 +201,7 @@ export default function DemoSonrisas() {
               <WhatsAppIcon className="w-4 h-4" />
               WhatsApp
             </a>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`md:hidden p-2.5 rounded-full transition-colors duration-500 ${navSolid ? 'text-slate-800' : 'text-white'}`}>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu" aria-expanded={mobileMenuOpen} className={`md:hidden p-3 min-w-[44px] min-h-[44px] rounded-full transition-colors duration-500 ${navSolid ? 'text-slate-800' : 'text-white'}`}>
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -223,15 +228,15 @@ export default function DemoSonrisas() {
         </AnimatePresence>
       </motion.nav>
 
-      <section ref={heroRef} className="relative min-h-screen overflow-hidden">
+      <section ref={heroRef} className="relative min-h-[100dvh] overflow-hidden">
         <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80" alt="Clinica dental" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=75" alt="" aria-hidden="true" fetchPriority="high" width={1200} height={800} className="w-full h-full object-cover" />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/30" />
         <FloatingBlob className="w-96 h-96 bg-cyan-500 top-20 -right-20" delay={0} />
         <FloatingBlob className="w-72 h-72 bg-amber-400 bottom-20 left-10" delay={3} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 min-h-screen flex items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 min-h-[100dvh] flex items-center">
           <div className="max-w-2xl pt-20">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="flex items-center gap-3 mb-8">
               <div className="h-px w-12 bg-cyan-400" />
@@ -344,7 +349,7 @@ export default function DemoSonrisas() {
                 transition={{ delay: i * 0.05 }}
                 className="group flex items-center justify-center h-12 w-28"
               >
-                <img src={brand.src} alt={brand.name} className="h-10 max-w-[120px] w-auto object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
+                <img src={brand.src} alt={brand.name} loading="lazy" width={120} height={40} className="h-10 max-w-[120px] w-auto object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
               </motion.div>
             ))}
           </div>
@@ -382,7 +387,7 @@ export default function DemoSonrisas() {
                   transition={{ delay: i * 0.08, duration: 0.5 }}
                   className={`${spanClass} group relative rounded-2xl overflow-hidden cursor-pointer`}
                 >
-                  <img src={svc.image} alt={svc.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={svc.image} alt={svc.name} loading="lazy" width={600} height={400} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   {svc.popular && (
@@ -433,6 +438,7 @@ export default function DemoSonrisas() {
                       src={activeBA === i ? item.after : item.before}
                       alt={item.treatment}
                       loading="lazy"
+                      width={400} height={400}
                       className="w-full h-full object-cover"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -581,7 +587,7 @@ export default function DemoSonrisas() {
                 className="break-inside-avoid group"
               >
                 <div className={`overflow-hidden rounded-xl ${img.height} relative`}>
-                  <img src={img.src} alt={img.label} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={img.src} alt={img.label} loading="lazy" width={600} height={450} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-cyan-500/0 group-hover:bg-cyan-500/10 transition-colors duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     <span className="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-700 text-xs font-medium rounded-full">{img.label}</span>
@@ -634,7 +640,7 @@ export default function DemoSonrisas() {
               </AnimatePresence>
             </div>
             <div className="flex items-center justify-center gap-4 mt-6">
-              <button onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)} className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-cyan-500 hover:text-cyan-500 transition-colors">
+              <button onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)} aria-label="Testimonio anterior" className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-cyan-500 hover:text-cyan-500 transition-colors">
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <div className="flex gap-2">
@@ -642,7 +648,7 @@ export default function DemoSonrisas() {
                   <button key={i} onClick={() => setActiveTestimonial(i)} className={`h-2 rounded-full transition-all duration-300 ${i === activeTestimonial ? 'w-8 bg-cyan-500' : 'w-2 bg-slate-300 hover:bg-slate-400'}`} />
                 ))}
               </div>
-              <button onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)} className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-cyan-500 hover:text-cyan-500 transition-colors">
+              <button onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)} aria-label="Siguiente testimonio" className="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:border-cyan-500 hover:text-cyan-500 transition-colors">
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
@@ -763,13 +769,13 @@ export default function DemoSonrisas() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 mt-10 pt-8 border-t border-slate-800">
-                  <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-colors">
+                  <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-colors">
                     <FacebookIcon className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-colors">
+                  <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-colors">
                     <InstagramIcon className="w-4 h-4" />
                   </a>
-                  <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-colors">
+                  <a href="#" aria-label="Google Maps" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-colors">
                     <GoogleMapsIcon className="w-4 h-4" />
                   </a>
                 </div>
