@@ -50,7 +50,7 @@ export default function Footer() {
                       Escribir Ahora
                     </a>
                     <button
-                      onClick={() => window.location.href = 'mailto:contacto@balamcode.code'}
+                      onClick={() => window.location.href = 'mailto:contacto@balamcode.com'}
                       className="magnetic-btn flex items-center justify-center gap-2 px-8 py-4 bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] text-white font-semibold rounded-full transition-all duration-300"
                     >
                       <Mail className="w-5 h-5" />
@@ -62,13 +62,13 @@ export default function Footer() {
                 <div className="bg-slate-900/50 border border-slate-800 rounded-[2rem] p-8 backdrop-blur-sm">
                   <h3 className="font-display text-lg font-semibold mb-6">Información de Contacto</h3>
                   <div className="space-y-5">
-                    <a href="mailto:contacto@balamcode.code" className="flex items-center gap-4 group">
+                    <a href="mailto:contacto@balamcode.com" className="flex items-center gap-4 group">
                       <div className="w-10 h-10 bg-cyan-500/10 rounded-xl flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
                         <Mail className="w-5 h-5 text-cyan-400" />
                       </div>
                       <div>
                         <p className="text-xs text-slate-500 uppercase tracking-wider font-mono">Email</p>
-                        <p className="text-slate-300 group-hover:text-white transition-colors">contacto@balamcode.code</p>
+                        <p className="text-slate-300 group-hover:text-white transition-colors">contacto@balamcode.com</p>
                       </div>
                     </a>
                     <a href="tel:+50433672227" className="flex items-center gap-4 group">
@@ -126,10 +126,10 @@ export default function Footer() {
                 <a href="https://wa.me/50433672227?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-green-500/10 hover:border-green-500/20 hover:text-green-400 transition-all duration-300">
                   <WhatsAppIcon className="w-5 h-5" />
                 </a>
-                <a href="https://instagram.com/balamcode" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500/10 hover:border-pink-500/20 hover:text-pink-400 transition-all duration-300">
+                <a href="https://www.instagram.com/balamcodehn/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500/10 hover:border-pink-500/20 hover:text-pink-400 transition-all duration-300">
                   <InstagramIcon className="w-5 h-5" />
                 </a>
-                <a href="mailto:contacto@balamcode.code" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500/10 hover:border-cyan-500/20 hover:text-cyan-400 transition-all duration-300">
+                <a href="mailto:contacto@balamcode.com" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-cyan-500/10 hover:border-cyan-500/20 hover:text-cyan-400 transition-all duration-300">
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
