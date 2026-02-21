@@ -330,7 +330,7 @@ export default function DemoSonrisas() {
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-light tracking-[0.15em] uppercase text-slate-400 mb-8">Trabajamos con las mejores marcas</p>
-          <div className="grid grid-cols-3 gap-8 items-center justify-items-center">
+          <div className="flex flex-wrap justify-center gap-12 items-center">
             {[
               { src: '/brands/colgate-logo-1.svg', name: 'Colgate' },
               { src: '/brands/Oral-B_logo.svg.png', name: 'Oral-B' },
@@ -342,9 +342,9 @@ export default function DemoSonrisas() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="group flex items-center justify-center"
+                className="group flex items-center justify-center h-12 w-28"
               >
-                <img src={brand.src} alt={brand.name} className="h-8 opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
+                <img src={brand.src} alt={brand.name} className="h-10 max-w-[120px] w-auto object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
               </motion.div>
             ))}
           </div>

@@ -488,13 +488,13 @@ export default function DemoHogarPrime() {
         <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
           <p className="text-xs tracking-[0.3em] uppercase font-light text-slate-400 mb-4">Alianzas Estratégicas</p>
           <h3 className="font-serif text-2xl text-slate-900 mb-12">Instituciones que <em className="italic" style={{ color: '#D4A853' }}>respaldan</em> nuestro trabajo</h3>
-          <div className="flex flex-wrap justify-center gap-12 items-center">
+          <div className="flex flex-wrap justify-center gap-16 items-center">
             {[
               { src: '/brands/BAC_Credomatic_logo.svg.png', name: 'BAC' },
               { src: '/brands/Ficohsa_logo.png', name: 'Ficohsa' },
             ].map(brand => (
-              <div key={brand.name} className="group flex items-center justify-center">
-                <img src={brand.src} alt={brand.name} className="h-10 opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
+              <div key={brand.name} className="group flex items-center justify-center h-14 w-36">
+                <img src={brand.src} alt={brand.name} className="h-12 max-w-[150px] w-auto object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
               </div>
             ))}
           </div>

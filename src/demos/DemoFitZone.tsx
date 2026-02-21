@@ -335,15 +335,15 @@ export default function DemoFitZone() {
       <section className="py-10 bg-[#0A0A0A]">
         <div className="max-w-5xl mx-auto px-4 lg:pl-24">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-zinc-600 text-center mb-8">Marcas que nos respaldan</p>
-          <div className="flex flex-wrap justify-center gap-10 items-center">
+          <div className="flex flex-wrap justify-center gap-14 items-center">
             {[
               { src: '/brands/Logo_NIKE.svg', name: 'Nike' },
               { src: '/brands/Adidas_Logo.svg', name: 'Adidas' },
               { src: '/brands/puma-logo-logo.svg', name: 'Puma' },
               { src: '/brands/oakley.svg', name: 'Oakley' },
             ].map(brand => (
-              <div key={brand.name} className="group flex items-center justify-center">
-                <img src={brand.src} alt={brand.name} className="h-8 opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 invert" />
+              <div key={brand.name} className="group w-32 h-10 flex items-center justify-center">
+                <img src={brand.src} alt={brand.name} className="max-w-full max-h-full object-contain opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 invert" />
               </div>
             ))}
           </div>
@@ -417,11 +417,11 @@ export default function DemoFitZone() {
 
       <section className="relative py-32 bg-[#0A0A0A]" style={{ clipPath: 'polygon(0 0, 100% 8%, 100% 100%, 0 92%)' }}>
         <div className="max-w-7xl mx-auto px-4 lg:pl-24">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16 items-end">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-end">
             {[
               { value: 3, suffix: '', label: 'SEDES' },
               { value: 50, suffix: '+', label: 'CLASES SEMANALES' },
-              { value: 2000, suffix: '+', label: 'MIEMBROS ACTIVOS' },
+              { value: 2, suffix: 'K+', label: 'MIEMBROS ACTIVOS' },
               { value: 15, suffix: '', label: 'ENTRENADORES' },
             ].map((stat, i) => (
               <motion.div
@@ -432,7 +432,7 @@ export default function DemoFitZone() {
                 transition={{ delay: i * 0.1, duration: 0.4, type: 'spring', stiffness: 100 }}
                 className="text-center lg:text-left"
               >
-                <div className="stat-number text-5xl sm:text-8xl lg:text-[10rem] font-extrabold leading-none tracking-tighter font-mono">
+                <div className="stat-number text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-none tracking-tighter font-mono whitespace-nowrap">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="text-zinc-600 text-xs uppercase tracking-[0.3em] font-bold mt-2">{stat.label}</p>

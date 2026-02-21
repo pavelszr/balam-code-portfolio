@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /demo/ecommerce-admin
+
+Sitemap: https://balamcode.com/sitemap.xml

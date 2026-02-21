@@ -25,7 +25,7 @@ const products = [
 ];
 
 const brandLogos = [
-  { name: 'DeWalt', src: '/brands/dewalt-4-logo.svg' },
+  { name: 'DeWalt', src: '/brands/DeWalt_Logo.svg.png' },
   { name: 'Stanley', src: '/brands/stanley-thumb.png' },
   { name: 'Makita', src: '/brands/Makita_Logo.svg.png' },
 ];
@@ -333,10 +333,10 @@ export default function DemoFerremax() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="border-2 border-neutral-800 p-6 flex items-center justify-center hover:border-yellow-500 hover:bg-neutral-800/30 transition-colors group"
+                className="border-2 border-neutral-800 p-8 flex items-center justify-center hover:border-yellow-500 hover:bg-neutral-800/30 transition-colors group h-28"
               >
-                <div className="opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0">
-                  <img src={brand.src} alt={brand.name} className="h-8 w-auto invert" />
+                <div className="w-44 h-12 opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0 flex items-center justify-center">
+                  <img src={brand.src} alt={brand.name} className="max-w-full max-h-full object-contain invert brightness-200" />
                 </div>
               </motion.div>
             ))}
