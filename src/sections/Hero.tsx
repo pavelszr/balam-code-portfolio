@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
-import { MayanStepPattern } from '../components/MayanElements';
+
 import gsap from 'gsap';
 
 const HeroBackground3D = lazy(() => import('../components/HeroBackground3D'));
@@ -81,7 +81,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/30 to-transparent z-[2]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-16 lg:pb-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-24 md:pt-0 pb-16 lg:pb-24">
         <div className="max-w-4xl">
           <div className="hero-badge inline-flex items-center gap-2.5 px-5 py-2.5 bg-white/[0.06] border border-white/[0.08] rounded-full mb-10 shadow-[0_0_30px_rgba(6,182,212,0.06)]">
             <span className="relative w-2 h-2">
@@ -138,8 +138,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="hero-stats flex items-center gap-10 flex-wrap">
-            <MayanStepPattern className="text-cyan-500 opacity-20 mr-2" />
+          <div className="hero-stats flex items-center gap-6 sm:gap-10 flex-wrap">
             {[
               { end: 3, suffix: 'x', label: 'Más Conversiones' },
               { end: 7, suffix: ' Días', label: 'Entrega Garantizada' },
