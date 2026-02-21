@@ -73,8 +73,8 @@ export default function Hero() {
           <HeroBackground3D />
         </Suspense>
 
-        <div className="hero-orb hero-orb-1 absolute top-[15%] right-[10%] w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] rounded-full bg-cyan-500/[0.07] blur-[80px] lg:blur-[120px] pointer-events-none z-[1]" />
-        <div className="hero-orb hero-orb-2 absolute bottom-[20%] left-[5%] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] rounded-full bg-blue-500/[0.05] blur-[80px] lg:blur-[100px] pointer-events-none z-[1]" />
+        <div className="hero-orb hero-orb-1 hidden md:block absolute top-[15%] right-[10%] w-[500px] h-[500px] rounded-full bg-cyan-500/[0.07] blur-[120px] pointer-events-none z-[1]" />
+        <div className="hero-orb hero-orb-2 hidden md:block absolute bottom-[20%] left-[5%] w-[400px] h-[400px] rounded-full bg-blue-500/[0.05] blur-[100px] pointer-events-none z-[1]" />
 
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent z-[2]" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/30 to-transparent z-[2]" />

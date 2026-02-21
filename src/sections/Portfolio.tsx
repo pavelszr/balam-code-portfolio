@@ -11,7 +11,7 @@ const projects = [
     name: 'Sonrisas Honduras',
     type: 'Landing Page',
     category: 'Clínica Dental',
-    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=75',
     description: 'Landing page profesional para clínica dental con sistema de citas online y galería de tratamientos.',
     demoUrl: '/demo/sonrisas-honduras',
     features: ['Reserva de citas online', 'Galería de tratamientos', 'Testimonios de pacientes', 'Integración WhatsApp', 'Mapa de ubicación'],
@@ -21,7 +21,7 @@ const projects = [
     name: 'FerreMax',
     type: 'E-Commerce',
     category: 'Ferretería',
-    image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=75',
     description: 'Tienda en línea con catálogo completo de productos, búsqueda por categorías y carrito de compras.',
     demoUrl: '/demo/ferremax',
     features: ['Catálogo de 500+ productos', 'Búsqueda y filtros', 'Carrito de compras', 'Gestión de inventario', 'Panel de administración'],
@@ -31,7 +31,7 @@ const projects = [
     name: 'Hogar Prime',
     type: 'Landing Page',
     category: 'Bienes Raíces',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=75',
     description: 'Sitio web para inmobiliaria con catálogo de propiedades, filtros de búsqueda y formulario de contacto.',
     demoUrl: '/demo/hogar-prime',
     features: ['Catálogo de propiedades', 'Filtros por precio y zona', 'Galería de fotos HD', 'Formulario de interés', 'Integración WhatsApp'],
@@ -41,7 +41,7 @@ const projects = [
     name: 'Café Aroma',
     type: 'Landing Page',
     category: 'Restaurante / Café',
-    image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&q=75',
     description: 'Sitio web para cafetería premium con menú digital interactivo, sistema de reservaciones y galería del local.',
     demoUrl: '/demo/cafe-aroma',
     features: ['Menú digital con filtros', 'Sistema de reservaciones', 'Galería del local', 'Integración WhatsApp', 'Horarios y ubicación'],
@@ -51,7 +51,7 @@ const projects = [
     name: 'FitZone',
     type: 'Landing Page',
     category: 'Gimnasio / Fitness',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=75',
     description: 'Landing page para gimnasio con horarios de clases, planes de membresía y perfiles de entrenadores.',
     demoUrl: '/demo/fitzone',
     features: ['Horario de clases', 'Planes de membresía', 'Perfiles de entrenadores', 'Prueba gratis online', 'Múltiples sedes'],
@@ -61,7 +61,7 @@ const projects = [
     name: 'Estilo Salón & Spa',
     type: 'Landing Page',
     category: 'Salón de Belleza',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=75',
     description: 'Sitio web elegante para salón de belleza con catálogo de servicios, galería de trabajos y reserva de citas.',
     demoUrl: '/demo/estilo-salon',
     features: ['Catálogo de servicios', 'Galería de trabajos', 'Reserva de citas online', 'Equipo de estilistas', 'Testimonios de clientes'],
@@ -71,7 +71,7 @@ const projects = [
     name: 'TechStore Admin',
     type: 'Panel Admin E-Commerce',
     category: 'Tienda de Tecnología',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=75',
     description: 'Panel de administración completo para e-commerce con dashboard de ventas en tiempo real, gestión de inventario y analíticas avanzadas.',
     demoUrl: '/demo/ecommerce-admin',
     features: ['Dashboard de ventas en tiempo real', 'Gestión de productos e inventario', 'Analíticas y embudo de conversión', 'Gestión de clientes y segmentos', 'Alertas de stock automáticas'],
@@ -94,20 +94,18 @@ function HelixAnimation() {
 function GridAnimation() {
   return (
     <div className="w-20 h-20 relative">
-      <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 gap-1">
-        {Array.from({ length: 16 }).map((_, i) => (
+      <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-1">
+        {Array.from({ length: 9 }).map((_, i) => (
           <div
             key={i}
-            className="rounded-sm bg-cyan-500/10 animate-pulse"
-            style={{ animationDelay: `${i * 0.15}s`, animationDuration: '2s' }}
+            className="rounded-sm bg-cyan-500/10"
+            style={{ opacity: (i % 3 + 1) * 0.3 }}
           />
         ))}
       </div>
       <div
         className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-transparent"
-        style={{
-          animation: 'scan 3s linear infinite',
-        }}
+        style={{ animation: 'scan 3s linear infinite' }}
       />
       <style>{`@keyframes scan { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }`}</style>
     </div>
@@ -136,22 +134,30 @@ export default function Portfolio() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>('.stack-card');
       cards.forEach((card, i) => {
         if (i === cards.length - 1) return;
         ScrollTrigger.create({
           trigger: card,
-          start: 'top 10%',
-          end: 'bottom top',
-          scrub: true,
+          start: 'top 5%',
+          end: `+=${isMobile ? '600' : '400'}`,
+          scrub: 1.5,
           onUpdate: (self) => {
             const progress = self.progress;
-            gsap.set(card, {
-              scale: 1 - progress * 0.08,
-              filter: `blur(${progress * 12}px)`,
-              opacity: 1 - progress * 0.4,
-            });
+            if (isMobile) {
+              gsap.set(card, {
+                scale: 1 - progress * 0.05,
+                opacity: 1 - progress * 0.6,
+              });
+            } else {
+              gsap.set(card, {
+                scale: 1 - progress * 0.08,
+                filter: `blur(${progress * 8}px)`,
+                opacity: 1 - progress * 0.4,
+              });
+            }
           },
         });
       });
@@ -190,6 +196,7 @@ export default function Portfolio() {
                   <img
                     src={project.image}
                     alt={project.name}
+                    loading="lazy"
                     className="w-full h-64 lg:h-full object-cover group-hover/card:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />

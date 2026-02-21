@@ -77,18 +77,18 @@ export default function About() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="h-48 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" alt="Equipo colaborando" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" alt="Equipo colaborando" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="h-64 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" alt="Espacio de trabajo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80" alt="Espacio de trabajo" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="h-64 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80" alt="Reunión de equipo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80" alt="Reunión de equipo" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="h-48 bg-slate-100 rounded-[1.5rem] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1531498860502-7c67cf02f657?w=400&q=80" alt="Sesión de código" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img src="https://images.unsplash.com/photo-1531498860502-7c67cf02f657?w=400&q=80" alt="Sesión de código" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
               </div>
             </div>

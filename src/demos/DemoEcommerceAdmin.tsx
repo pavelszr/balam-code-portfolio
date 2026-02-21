@@ -364,7 +364,7 @@ function ProductsPage() {
                   <td className="px-5 py-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/[0.05] flex-shrink-0">
-                        <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                        <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover" />
                       </div>
                       <div>
                         <span className="text-sm text-white font-medium">{product.name}</span>
@@ -400,7 +400,7 @@ function ProductsPage() {
           <div key={product.sku} className="bg-slate-900/60 border border-slate-800/60 rounded-xl p-4">
             <div className="flex items-start gap-3 mb-3">
               <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/[0.05] flex-shrink-0">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                <img src={product.image} alt={product.name} loading="lazy" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm text-white font-medium truncate">{product.name}</p>

@@ -342,7 +342,7 @@ export default function DemoEstiloSalon() {
                   className={`group relative overflow-hidden cursor-pointer ${spanClass}`}
                   style={{ borderRadius: '2rem' }}
                 >
-                  <img src={svc.image} alt={svc.name} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
+                  <img src={svc.image} alt={svc.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-out">
                     <h3 className="font-serif text-white text-lg mb-1">{svc.name}</h3>
@@ -398,7 +398,7 @@ export default function DemoEstiloSalon() {
                 className={`group relative overflow-hidden break-inside-avoid ${img.height}`}
                 style={{ borderRadius: '1.5rem' }}
               >
-                <img src={img.src} alt={`Estilo ${i + 1}`} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
+                <img src={img.src} alt={`Estilo ${i + 1}`} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.03]" />
                 <div className="absolute inset-0 bg-rose-400/0 group-hover:bg-rose-400/15 transition-colors duration-700" />
               </motion.div>
             ))}

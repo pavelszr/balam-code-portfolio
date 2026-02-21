@@ -386,7 +386,7 @@ export default function DemoFitZone() {
                 }}
               >
                 <div className={`w-20 sm:w-36 flex-shrink-0 overflow-hidden class-inner-${i}`}>
-                  <img src={cls.image} alt={cls.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={cls.image} alt={cls.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className={`flex-1 p-3 sm:p-5 flex items-center justify-between class-inner-${i}`}>
                   <div>

@@ -270,7 +270,7 @@ export default function DemoFerremax() {
                   >
                     <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-500 transition-colors pointer-events-none z-10" />
                     <div className="relative overflow-hidden bg-neutral-900 border-b-2 border-neutral-800">
-                      <img src={product.image} alt={product.name} className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                      <img src={product.image} alt={product.name} loading="lazy" className="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
                       {product.badge && (
                         <span className={`absolute top-0 left-0 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider ${
                           product.badge === 'OFERTA' ? 'bg-red-600 text-white' : product.badge === 'MAS VENDIDO' ? 'bg-yellow-500 text-neutral-950' : 'bg-orange-500 text-white'

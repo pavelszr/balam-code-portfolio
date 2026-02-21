@@ -470,6 +470,7 @@ export default function DemoCafeAroma() {
                 <img
                   src={img}
                   alt={`Cafe Aroma ${(i % galleryImages.length) + 1}`}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

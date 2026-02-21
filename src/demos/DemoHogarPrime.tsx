@@ -327,7 +327,7 @@ export default function DemoHogarPrime() {
                     onClick={() => setSelectedProperty(prop)}
                   >
                     <div className="aspect-[3/4] sm:aspect-[16/9] lg:aspect-[21/9] overflow-hidden">
-                      <img src={prop.image} alt={prop.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
+                      <img src={prop.image} alt={prop.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent sm:from-slate-900/80 sm:via-slate-900/20" />
                     <button
@@ -389,7 +389,7 @@ export default function DemoHogarPrime() {
                         onClick={() => setSelectedProperty(p!)}
                       >
                         <div className="relative aspect-[4/3] overflow-hidden mb-6">
-                          <img src={p!.image} alt={p!.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
+                          <img src={p!.image} alt={p!.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
                           <button
                             onClick={(e) => { e.stopPropagation(); toggleFavorite(p!.title); }}
                             className="absolute top-4 right-4 p-2.5 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all"
@@ -549,7 +549,7 @@ export default function DemoHogarPrime() {
 
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80" alt="Propiedad" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80" alt="Propiedad" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-slate-900/60" />
         </div>
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
@@ -682,7 +682,7 @@ export default function DemoHogarPrime() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden">
-                <img src={selectedProperty.image} alt={selectedProperty.title} className="w-full h-full object-cover" />
+                <img src={selectedProperty.image} alt={selectedProperty.title} loading="lazy" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
                 <button
                   onClick={() => setSelectedProperty(null)}
