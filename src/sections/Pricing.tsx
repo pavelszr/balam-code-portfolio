@@ -16,6 +16,7 @@ const plans = [
     icon: Sparkles,
     highlight: false,
     cta: 'Quiero mi Demo',
+    promo: '',
     features: [
       'Reunión de consulta gratuita',
       'Mockup de TU landing page',
@@ -26,13 +27,14 @@ const plans = [
   },
   {
     name: 'Landing Page',
-    price: 'L.6,000 - L.9,000',
+    price: 'L.8,000 - L.10,000',
     period: 'pago único',
     altPrice: 'o desde L.1,000/mes x 12 meses',
     description: 'Lo que eligen el 80% de nuestros clientes',
     icon: Rocket,
     highlight: true,
     cta: 'Empezar Hoy',
+    promo: '🔥 Primeros 3 clientes del mes: L.6,500',
     features: [
       'Diseño profesional personalizado',
       'Responsive (móvil, tablet, desktop)',
@@ -54,6 +56,7 @@ const plans = [
     icon: ShoppingCart,
     highlight: false,
     cta: 'Solicitar Cotización',
+    promo: '',
     features: [
       'Todo lo del plan Landing Page',
       'Catálogo de productos ilimitado',
@@ -156,6 +159,12 @@ export default function Pricing() {
 
                   {plan.altPrice && (
                     <p className="text-cyan-400 text-sm font-medium mb-3 font-mono">{plan.altPrice}</p>
+                  )}
+
+                  {plan.promo && (
+                    <div className="mb-3 px-3 py-2 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+                      <p className="text-amber-400 text-sm font-bold text-center">{plan.promo}</p>
+                    </div>
                   )}
 
                   <p className="text-slate-400 text-sm mb-8">{plan.description}</p>
