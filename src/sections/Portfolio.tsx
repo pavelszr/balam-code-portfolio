@@ -181,8 +181,8 @@ export default function Portfolio() {
             <MayanCornerGlyph className="text-cyan-500 opacity-40" position="right" />
           </div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
-            Así se Verá{' '}
-            <span className="font-serif italic text-gradient-cyan">Tu Negocio</span>
+            Ejemplos de Landing Pages{' '}
+            <span className="font-serif italic text-gradient-cyan">en Honduras</span>
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">
             No te pedimos que imagines. Te mostramos. Explora demos interactivos

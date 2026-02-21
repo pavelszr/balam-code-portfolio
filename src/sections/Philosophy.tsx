@@ -53,13 +53,13 @@ export default function Philosophy() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="space-y-16 lg:space-y-24">
           <div>
-            <p className="phil-line-1 font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-500 leading-tight tracking-tight">
+            <h2 className="phil-line-1 font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-500 leading-tight tracking-tight">
               Otros crean sitios web.
-            </p>
+            </h2>
           </div>
 
           <div>
-            <p className="phil-line-2 font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+            <p className="phil-line-2 font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight tracking-tight" aria-hidden="true">
               Nosotros creamos{' '}
               <span
                 className="font-serif italic text-cyan-400 text-glow"

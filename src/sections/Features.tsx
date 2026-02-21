@@ -252,8 +252,8 @@ export default function Features() {
             <MayanCornerGlyph className="text-cyan-500 opacity-40" position="right" />
           </div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
-            Todo Incluido, Cero{' '}
-            <span className="font-serif italic text-gradient-cyan">Sorpresas</span>
+            Diseño Web Profesional,{' '}
+            <span className="font-serif italic text-gradient-cyan">Todo Incluido</span>
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Mientras otros cobran extras por cada detalle, nosotros incluimos todo lo que

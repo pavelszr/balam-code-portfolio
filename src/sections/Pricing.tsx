@@ -108,12 +108,12 @@ export default function Pricing() {
             Precios Transparentes
           </span>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-            Menos de lo que Cuesta{' '}
-            <span className="font-serif italic text-cyan-400">un Empleado</span>
+            Precios de Páginas Web:{' '}
+            <span className="font-serif italic text-cyan-400">Sin Sorpresas</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Una landing page trabaja para ti 24/7, los 365 días del año.
-            Sin vacaciones, sin días libres, sin excusas.
+            Menos de lo que cuesta un empleado — sin vacaciones, sin excusas.
           </p>
         </div>
 

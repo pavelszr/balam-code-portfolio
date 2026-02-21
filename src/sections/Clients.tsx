@@ -12,9 +12,9 @@ export default function Clients() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-10">
         <div className="flex items-center justify-center gap-4">
           <div className="h-px w-12 bg-gradient-to-r from-transparent to-slate-200" />
-          <p className="text-center text-sm font-medium text-slate-400 uppercase tracking-[0.2em] font-mono">
+          <h2 className="text-center text-sm font-medium text-slate-400 uppercase tracking-[0.2em] font-mono">
             Empresas de USA y Honduras que confían en nosotros
-          </p>
+          </h2>
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-slate-200" />
         </div>
       </div>
