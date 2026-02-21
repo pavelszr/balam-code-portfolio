@@ -5,12 +5,12 @@ import { WhatsAppIcon, FacebookIcon, InstagramIcon, GoogleMapsIcon } from '../co
 import { useRef, useState, useEffect } from 'react';
 
 const services = [
-  { name: 'Limpieza Dental', price: 'L.800', desc: 'Limpieza profunda profesional con ultrasonido', image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80', popular: false, size: 'large' as const },
-  { name: 'Blanqueamiento', price: 'L.3,500', desc: 'Dientes hasta 8 tonos mas blancos en 1 sesion', image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80', popular: true, size: 'medium' as const },
-  { name: 'Ortodoncia', price: 'Desde L.15,000', desc: 'Brackets metalicos, ceramicos o invisalign', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80', popular: false, size: 'medium' as const },
-  { name: 'Implantes Dentales', price: 'Desde L.20,000', desc: 'Implantes de titanio con corona de porcelana', image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80', popular: false, size: 'small' as const },
-  { name: 'Carillas de Porcelana', price: 'Desde L.5,000', desc: 'Sonrisa perfecta con carillas ultrafinas', image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80', popular: true, size: 'small' as const },
-  { name: 'Endodoncia', price: 'L.4,500', desc: 'Tratamiento de conducto indoloro y seguro', image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80', popular: false, size: 'wide' as const },
+  { name: 'Limpieza Dental', price: 'L.800', desc: 'Limpieza profunda profesional con ultrasonido', image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=80', popular: false, size: 'large' as const },
+  { name: 'Blanqueamiento', price: 'L.3,500', desc: 'Dientes hasta 8 tonos mas blancos en 1 sesion', image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1200&q=80', popular: true, size: 'medium' as const },
+  { name: 'Ortodoncia', price: 'Desde L.15,000', desc: 'Brackets metalicos, ceramicos o invisalign', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&q=80', popular: false, size: 'medium' as const },
+  { name: 'Implantes Dentales', price: 'Desde L.20,000', desc: 'Implantes de titanio con corona de porcelana', image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1200&q=80', popular: false, size: 'small' as const },
+  { name: 'Carillas de Porcelana', price: 'Desde L.5,000', desc: 'Sonrisa perfecta con carillas ultrafinas', image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&q=80', popular: true, size: 'small' as const },
+  { name: 'Endodoncia', price: 'L.4,500', desc: 'Tratamiento de conducto indoloro y seguro', image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80', popular: false, size: 'wide' as const },
 ];
 
 const testimonials = [
@@ -21,12 +21,12 @@ const testimonials = [
 ];
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80', height: 'h-64', label: 'Consultorio' },
-  { src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80', height: 'h-80', label: 'Tratamiento' },
-  { src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80', height: 'h-56', label: 'Ortodoncia' },
-  { src: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80', height: 'h-72', label: 'Tecnologia' },
-  { src: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80', height: 'h-60', label: 'Blanqueamiento' },
-  { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80', height: 'h-96', label: 'Recepcion' },
+  { src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80', height: 'h-64', label: 'Consultorio' },
+  { src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=80', height: 'h-80', label: 'Tratamiento' },
+  { src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&q=80', height: 'h-56', label: 'Ortodoncia' },
+  { src: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1200&q=80', height: 'h-72', label: 'Tecnologia' },
+  { src: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1200&q=80', height: 'h-60', label: 'Blanqueamiento' },
+  { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&q=80', height: 'h-96', label: 'Recepcion' },
 ];
 
 const timelineSteps = [
@@ -43,9 +43,9 @@ const team = [
 ];
 
 const beforeAfter = [
-  { treatment: 'Carillas de Porcelana', duration: '2 semanas', before: 'https://images.unsplash.com/photo-1495462911434-be47104d70fa?w=400&q=80', after: 'https://images.unsplash.com/photo-1581585575795-98d8a6a84626?w=400&q=80' },
-  { treatment: 'Blanqueamiento Laser', duration: '1 sesion', before: 'https://images.unsplash.com/photo-1495462911434-be47104d70fa?w=400&q=80', after: 'https://images.unsplash.com/photo-1581585575795-98d8a6a84626?w=400&q=80' },
-  { treatment: 'Ortodoncia Invisalign', duration: '8 meses', before: 'https://images.unsplash.com/photo-1495462911434-be47104d70fa?w=400&q=80', after: 'https://images.unsplash.com/photo-1581585575795-98d8a6a84626?w=400&q=80' },
+  { treatment: 'Carillas de Porcelana', duration: '2 semanas', before: 'https://images.unsplash.com/photo-1495462911434-be47104d70fa?w=800&q=80', after: 'https://images.unsplash.com/photo-1581585575795-98d8a6a84626?w=800&q=80' },
+  { treatment: 'Blanqueamiento Laser', duration: '1 sesion', before: 'https://images.unsplash.com/photo-1495462911434-be47104d70fa?w=800&q=80', after: 'https://images.unsplash.com/photo-1581585575795-98d8a6a84626?w=800&q=80' },
+  { treatment: 'Ortodoncia Invisalign', duration: '8 meses', before: 'https://images.unsplash.com/photo-1495462911434-be47104d70fa?w=800&q=80', after: 'https://images.unsplash.com/photo-1581585575795-98d8a6a84626?w=800&q=80' },
 ];
 
 const marqueeItems = ['BLANQUEAMIENTO', 'ORTODONCIA', 'IMPLANTES', 'CARILLAS', 'LIMPIEZA DENTAL', 'ENDODONCIA', 'INVISALIGN', 'SPA DENTAL', 'RADIOGRAFIA 3D', 'DISENO DE SONRISA'];
@@ -179,13 +179,8 @@ export default function DemoSonrisas() {
 
       <motion.nav className={`fixed top-10 left-0 right-0 z-50 transition-all duration-500 ${navSolid ? 'bg-white/[0.97] md:bg-white/95 md:backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-500 ${navSolid ? 'bg-cyan-500' : 'bg-white/15 backdrop-blur-sm'}`}>
-              <Sparkles className="w-4 h-4 text-white" />
-            </div>
-            <span className={`text-lg font-serif italic font-semibold transition-colors duration-500 ${navSolid ? 'text-slate-800' : 'text-white'}`}>
-              Sonrisas
-            </span>
+          <Link to="/" className="flex items-center">
+            <img src="/demos/sonrisas.png" alt="Sonrisas Honduras" className={`h-10 w-auto transition-all duration-500 ${navSolid ? '' : 'brightness-0 invert'}`} />
           </Link>
 
           <div className="hidden md:flex items-center">
@@ -230,7 +225,7 @@ export default function DemoSonrisas() {
 
       <section ref={heroRef} className="relative min-h-[100dvh] overflow-hidden">
         <motion.div className="absolute inset-0" style={{ y: heroY, scale: heroScale }}>
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=75" alt="" aria-hidden="true" fetchPriority="high" width={1200} height={800} className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="" aria-hidden="true" fetchPriority="high" width={1200} height={800} className="w-full h-full object-cover" />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-slate-900/30" />
         <FloatingBlob className="w-96 h-96 bg-cyan-500 top-20 -right-20" delay={0} />
@@ -812,12 +807,7 @@ export default function DemoSonrisas() {
 
       <footer className="bg-slate-900 border-t border-slate-800 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-4">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            </div>
-            <span className="font-serif italic text-white text-lg">Sonrisas Honduras</span>
-          </div>
+          <img src="/demos/sonrisas.png" alt="Sonrisas Honduras" className="h-12 w-auto brightness-0 invert opacity-80" />
           <p className="text-slate-600 text-sm font-light text-center">Col. Altamira, 3ra calle, San Pedro Sula, Honduras</p>
           <div className="w-12 h-px bg-slate-800" />
           <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-slate-600 font-light">

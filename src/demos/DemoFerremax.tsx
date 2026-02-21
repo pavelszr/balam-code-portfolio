@@ -14,14 +14,14 @@ const categories = [
 ];
 
 const products = [
-  { name: 'Taladro Inalambrico DeWalt 20V', price: 'L.2,450', oldPrice: 'L.2,900', category: 'Herramientas', image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80', rating: 4.8, reviews: 124, badge: 'MAS VENDIDO', stock: 85 },
-  { name: 'Pintura Acrilica Premium 1 Gal', price: 'L.650', oldPrice: '', category: 'Pintura', image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400&q=80', rating: 4.5, reviews: 67, badge: '', stock: 120 },
-  { name: 'Kit Llaves Allen Chrome 30pcs', price: 'L.380', oldPrice: 'L.450', category: 'Herramientas', image: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=400&q=80', rating: 4.7, reviews: 89, badge: 'OFERTA', stock: 45 },
-  { name: 'Cable Electrico THW 12AWG', price: 'L.45/m', oldPrice: '', category: 'Electricidad', image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&q=80', rating: 4.6, reviews: 156, badge: '', stock: 300 },
-  { name: 'Tubo PVC Sanitario 4" x 6m', price: 'L.320', oldPrice: '', category: 'Plomeria', image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=400&q=80', rating: 4.4, reviews: 43, badge: '', stock: 60 },
-  { name: 'Cemento Gris Portland 42.5kg', price: 'L.245', oldPrice: '', category: 'Construccion', image: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=400&q=80', rating: 4.9, reviews: 201, badge: 'TOP', stock: 500 },
-  { name: 'Sierra Circular Bosch 7-1/4"', price: 'L.3,200', oldPrice: 'L.3,800', category: 'Herramientas', image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&q=80', rating: 4.8, reviews: 95, badge: 'OFERTA', stock: 22 },
-  { name: 'Set Rodillos Pro + Bandeja', price: 'L.185', oldPrice: '', category: 'Pintura', image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&q=80', rating: 4.3, reviews: 38, badge: '', stock: 78 },
+  { name: 'Taladro Inalambrico DeWalt 20V', price: 'L.2,450', oldPrice: 'L.2,900', category: 'Herramientas', image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80', rating: 4.8, reviews: 124, badge: 'MAS VENDIDO', stock: 85 },
+  { name: 'Pintura Acrilica Premium 1 Gal', price: 'L.650', oldPrice: '', category: 'Pintura', image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&q=80', rating: 4.5, reviews: 67, badge: '', stock: 120 },
+  { name: 'Kit Llaves Allen Chrome 30pcs', price: 'L.380', oldPrice: 'L.450', category: 'Herramientas', image: 'https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&q=80', rating: 4.7, reviews: 89, badge: 'OFERTA', stock: 45 },
+  { name: 'Cable Electrico THW 12AWG', price: 'L.45/m', oldPrice: '', category: 'Electricidad', image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80', rating: 4.6, reviews: 156, badge: '', stock: 300 },
+  { name: 'Tubo PVC Sanitario 4" x 6m', price: 'L.320', oldPrice: '', category: 'Plomeria', image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&q=80', rating: 4.4, reviews: 43, badge: '', stock: 60 },
+  { name: 'Cemento Gris Portland 42.5kg', price: 'L.245', oldPrice: '', category: 'Construccion', image: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800&q=80', rating: 4.9, reviews: 201, badge: 'TOP', stock: 500 },
+  { name: 'Sierra Circular Bosch 7-1/4"', price: 'L.3,200', oldPrice: 'L.3,800', category: 'Herramientas', image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80', rating: 4.8, reviews: 95, badge: 'OFERTA', stock: 22 },
+  { name: 'Set Rodillos Pro + Bandeja', price: 'L.185', oldPrice: '', category: 'Pintura', image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80', rating: 4.3, reviews: 38, badge: '', stock: 78 },
 ];
 
 const brandLogos = [
@@ -62,14 +62,8 @@ export default function DemoFerremax() {
 
       <nav className="sticky top-8 z-40 bg-neutral-900 border-b-4 border-yellow-500">
         <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 border-2 border-yellow-500 flex items-center justify-center bg-neutral-950">
-              <Wrench className="w-5 h-5 text-yellow-500" />
-            </div>
-            <span className="font-mono text-xl font-bold tracking-wider">
-              <span className="text-yellow-500">FERRE</span>
-              <span className="text-white">MAX</span>
-            </span>
+          <Link to="/" className="flex items-center">
+            <img src="/demos/ferremax.png" alt="FerreMax" className="h-10 w-auto" />
           </Link>
 
           <div className="hidden lg:flex items-center border-2 border-neutral-700 bg-neutral-950 px-4 py-2 w-96">
@@ -382,14 +376,8 @@ export default function DemoFerremax() {
         <div className="max-w-[1400px] mx-auto px-4 py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 border-2 border-yellow-500 flex items-center justify-center">
-                  <Wrench className="w-4 h-4 text-yellow-500" />
-                </div>
-                <span className="font-mono text-lg font-bold tracking-wider">
-                  <span className="text-yellow-500">FERRE</span>
-                  <span className="text-white">MAX</span>
-                </span>
+              <div className="mb-6">
+                <img src="/demos/ferremax.png" alt="FerreMax" className="h-10 w-auto" />
               </div>
               <p className="font-mono text-neutral-600 text-xs uppercase tracking-wider leading-relaxed">
                 La ferreteria mas completa de Honduras. Todo para tu obra en un solo lugar.

@@ -18,7 +18,7 @@ const properties = [
     type: 'Casas',
     location: 'Col. Los Castaños, San Pedro Sula',
     beds: 3, baths: 2, area: '180 m²',
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80',
     featured: true,
     desc: 'Hermosa casa residencial con acabados de lujo, jardín amplio y cochera para 2 vehículos. Ubicada en una de las colonias más exclusivas de San Pedro Sula con seguridad 24/7.',
   },
@@ -28,7 +28,7 @@ const properties = [
     type: 'Apartamentos',
     location: 'Zona Viva, Tegucigalpa',
     beds: 2, baths: 2, area: '95 m²',
-    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80',
     featured: false,
     desc: 'Moderno apartamento en torre de lujo con amenidades completas: gimnasio, piscina y área social. Vista panorámica a la ciudad y acceso controlado.',
   },
@@ -38,7 +38,7 @@ const properties = [
     type: 'Casas',
     location: 'Valle de Ángeles, Francisco Morazán',
     beds: 4, baths: 3, area: '280 m²',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
     featured: true,
     desc: 'Espectacular casa campestre rodeada de naturaleza con terraza panorámica, chimenea y acabados en madera. Ideal para familias que buscan tranquilidad cerca de la ciudad.',
   },
@@ -48,7 +48,7 @@ const properties = [
     type: 'Terrenos',
     location: 'El Pedregal, San Pedro Sula',
     beds: 0, baths: 0, area: '500 m²',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
     featured: false,
     desc: 'Terreno plano en residencial cerrada con todos los servicios básicos disponibles. Ideal para construir la casa de tus sueños en una zona de alta plusvalía.',
   },
@@ -58,7 +58,7 @@ const properties = [
     type: 'Apartamentos',
     location: 'Lomas del Mayab, Tegucigalpa',
     beds: 3, baths: 2, area: '145 m²',
-    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80',
     featured: true,
     desc: 'Penthouse de lujo con terraza privada, doble altura y acabados premium. Ubicado en una de las zonas más cotizadas de Tegucigalpa con vista espectacular.',
   },
@@ -68,7 +68,7 @@ const properties = [
     type: 'Casas',
     location: 'Res. Maya, San Pedro Sula',
     beds: 4, baths: 3, area: '220 m²',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
     featured: false,
     desc: 'Casa con diseño contemporáneo, espacios abiertos y iluminación natural. Cuenta con piscina privada, área de BBQ y sistema de domótica inteligente.',
   },
@@ -144,9 +144,8 @@ export default function DemoHogarPrime() {
 
       <nav className={`fixed top-8 left-0 right-0 z-40 transition-all duration-700 ${scrolled ? 'bg-white/[0.97] md:bg-white/80 md:backdrop-blur-xl shadow-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
-          <Link to="/" className="font-serif text-2xl tracking-wide">
-            <span className={`transition-colors duration-700 ${scrolled ? 'text-slate-900' : 'text-white'}`}>Hogar</span>
-            <span className="italic" style={{ color: '#D4A853' }}> Prime</span>
+          <Link to="/" className="flex items-center">
+            <img src="/demos/hogar-prime.png" alt="Hogar Prime" className={`h-10 w-auto transition-all duration-700 ${scrolled ? '' : 'brightness-0 invert'}`} />
           </Link>
           <div className={`hidden md:flex items-center gap-12 text-xs font-light tracking-[0.25em] uppercase transition-colors duration-700 ${scrolled ? 'text-slate-600' : 'text-white/80'}`}>
             <a href="#propiedades" className="hover:opacity-60 transition-opacity">Propiedades</a>
@@ -189,10 +188,10 @@ export default function DemoHogarPrime() {
           animate={{ scale: [1, 1.05] }}
           transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
         >
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=75" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
         </motion.div>
         <div className="absolute inset-0 md:hidden">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=75" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
         </div>
         <div className="absolute inset-0 bg-slate-900/40" />
         <motion.div style={{ opacity: heroOpacity }} className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -770,9 +769,7 @@ export default function DemoHogarPrime() {
 
       <footer className="py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-          <Link to="/" className="font-serif text-2xl tracking-wide text-slate-900">
-            Hogar <em className="italic" style={{ color: '#D4A853' }}>Prime</em>
-          </Link>
+          <img src="/demos/hogar-prime.png" alt="Hogar Prime" className="h-12 w-auto mx-auto" />
           <div className="h-px w-16 mx-auto my-8" style={{ backgroundColor: '#D4A853' }} />
           <div className="flex justify-center gap-6 sm:gap-10 mb-8 flex-wrap">
             {['Propiedades', 'Servicios', 'Testimonios', 'Contacto'].map(item => (

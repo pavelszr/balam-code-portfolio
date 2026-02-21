@@ -23,6 +23,7 @@ const DemoCafeAroma = lazy(() => import('./demos/DemoCafeAroma'));
 const DemoFitZone = lazy(() => import('./demos/DemoFitZone'));
 const DemoEstiloSalon = lazy(() => import('./demos/DemoEstiloSalon'));
 const DemoEcommerceAdmin = lazy(() => import('./demos/DemoEcommerceAdmin'));
+const DemoClinicaMedica = lazy(() => import('./demos/DemoClinicaMedica'));
 
 function DemoLoading() {
   return (
@@ -70,8 +71,9 @@ function App() {
       <Route path="/demo/hogar-prime" element={<Suspense fallback={<DemoLoading />}><DemoHogarPrime /></Suspense>} />
       <Route path="/demo/cafe-aroma" element={<Suspense fallback={<DemoLoading />}><DemoCafeAroma /></Suspense>} />
       <Route path="/demo/fitzone" element={<Suspense fallback={<DemoLoading />}><DemoFitZone /></Suspense>} />
-      <Route path="/demo/estilo-salon" element={<Suspense fallback={<DemoLoading />}><DemoEstiloSalon /></Suspense>} />
+      <Route path="/demo/aura-zen" element={<Suspense fallback={<DemoLoading />}><DemoEstiloSalon /></Suspense>} />
       <Route path="/demo/ecommerce-admin" element={<Suspense fallback={<DemoLoading />}><DemoEcommerceAdmin /></Suspense>} />
+      <Route path="/demo/clinica-medica" element={<Suspense fallback={<DemoLoading />}><DemoClinicaMedica /></Suspense>} />
     </Routes>
     </>
   );

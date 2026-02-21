@@ -5,12 +5,12 @@ import { WhatsAppIcon } from '../components/SocialIcons';
 import { useRef, useState, useEffect } from 'react';
 
 const classes = [
-  { name: 'CrossFit', schedule: 'Lun, Mié, Vie — 6:00 AM', difficulty: 'Alta', instructor: 'Carlos Mejía', image: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=80' },
-  { name: 'Yoga', schedule: 'Mar, Jue — 7:00 AM', difficulty: 'Baja', instructor: 'Sofía Hernández', image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=80' },
-  { name: 'Spinning', schedule: 'Lun a Vie — 5:30 PM', difficulty: 'Media', instructor: 'Roberto Lagos', image: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=400&q=80' },
-  { name: 'Boxeo', schedule: 'Mar, Jue, Sáb — 4:00 PM', difficulty: 'Alta', instructor: 'Miguel Ávila', image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&q=80' },
-  { name: 'Pilates', schedule: 'Lun, Mié — 9:00 AM', difficulty: 'Baja', instructor: 'Andrea Reyes', image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80' },
-  { name: 'Funcional', schedule: 'Lun a Sáb — 6:30 AM', difficulty: 'Media', instructor: 'David Pineda', image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80' },
+  { name: 'CrossFit', schedule: 'Lun, Mié, Vie — 6:00 AM', difficulty: 'Alta', instructor: 'Carlos Mejía', image: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80' },
+  { name: 'Yoga', schedule: 'Mar, Jue — 7:00 AM', difficulty: 'Baja', instructor: 'Sofía Hernández', image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80' },
+  { name: 'Spinning', schedule: 'Lun a Vie — 5:30 PM', difficulty: 'Media', instructor: 'Roberto Lagos', image: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800&q=80' },
+  { name: 'Boxeo', schedule: 'Mar, Jue, Sáb — 4:00 PM', difficulty: 'Alta', instructor: 'Miguel Ávila', image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80' },
+  { name: 'Pilates', schedule: 'Lun, Mié — 9:00 AM', difficulty: 'Baja', instructor: 'Andrea Reyes', image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80' },
+  { name: 'Funcional', schedule: 'Lun a Sáb — 6:30 AM', difficulty: 'Media', instructor: 'David Pineda', image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80' },
 ];
 
 const plans = [
@@ -202,7 +202,11 @@ export default function DemoFitZone() {
         <span className="text-lime-400">&#9889;</span> Esto es un ejemplo creado por <Link to="/" className="underline font-bold text-lime-400 hover:text-lime-300 transition-colors">Balam Code</Link> — <Link to="/" className="underline hover:text-lime-300 transition-colors">Solicita el tuyo</Link>
       </div>
 
-      <nav className="fixed left-0 top-10 bottom-0 z-50 w-16 bg-zinc-950/95 backdrop-blur-md border-r border-zinc-800/50 hidden lg:flex flex-col items-center justify-center gap-1">
+      <nav className="fixed left-0 top-10 bottom-0 z-50 w-16 bg-zinc-950/95 backdrop-blur-md border-r border-zinc-800/50 hidden lg:flex flex-col items-center gap-1 pt-4 pb-4">
+        <Link to="/" className="mb-4 flex-shrink-0">
+          <img src="/demos/fitzone.png" alt="FitZone" className="h-10 w-10 object-contain" />
+        </Link>
+        <div className="flex-1 flex flex-col items-center justify-center gap-1">
         {navItems.map((item, i) => {
           const Icon = item.icon;
           return (
@@ -235,6 +239,7 @@ export default function DemoFitZone() {
         >
           <WhatsAppIcon className="w-5 h-5" />
         </a>
+        </div>
       </nav>
 
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-zinc-950 border-t border-zinc-800/50 flex lg:hidden items-center justify-around py-2">
@@ -255,7 +260,7 @@ export default function DemoFitZone() {
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }}
       >
         <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=75" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80" alt="" aria-hidden="true" className="w-full h-full object-cover" width={800} height={533} fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A]/95 via-[#0A0A0A]/80 to-transparent" />
         </motion.div>
 
@@ -782,6 +787,7 @@ export default function DemoFitZone() {
 
       <footer className="bg-[#0A0A0A] border-t border-zinc-900 py-6 pb-20 lg:pb-6">
         <div className="max-w-6xl mx-auto px-4 lg:pl-24 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <img src="/demos/fitzone.png" alt="FitZone" className="h-8 w-auto opacity-40" />
           <p className="text-zinc-700 text-xs uppercase tracking-widest">&copy; 2025 FitZone Honduras</p>
           <div className="h-px w-8 bg-lime-500/30 hidden sm:block" />
           <p className="text-zinc-700 text-xs">

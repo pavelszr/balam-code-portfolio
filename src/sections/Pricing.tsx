@@ -110,10 +110,13 @@ export default function Pricing() {
             <span className="font-mono text-xs">$</span>
             Precios Transparentes
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-            Precios de Páginas Web:{' '}
-            <span className="font-serif italic text-cyan-400">Sin Sorpresas</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+            Diseño Personalizado,{' '}
+            <span className="font-serif italic text-cyan-400">Todo Incluido</span>
           </h2>
+          <p className="text-cyan-400/80 text-sm font-medium tracking-wide uppercase mb-6">
+            Cada sitio es diseñado desde cero para tu negocio — sin plantillas, sin reciclados
+          </p>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Una landing page trabaja para ti 24/7, los 365 días del año.
             Menos de lo que cuesta un empleado — sin vacaciones, sin excusas.

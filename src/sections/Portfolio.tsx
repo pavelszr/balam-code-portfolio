@@ -59,13 +59,13 @@ const projects = [
     animation: 'grid',
   },
   {
-    name: 'Estilo Salón & Spa',
+    name: 'Aura Zen',
     type: 'Landing Page',
-    category: 'Salón de Belleza',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=75',
-    description: 'Sitio web elegante para salón de belleza con catálogo de servicios, galería de trabajos y reserva de citas.',
-    demoUrl: '/demo/estilo-salon',
-    features: ['Catálogo de servicios', 'Galería de trabajos', 'Reserva de citas online', 'Equipo de estilistas', 'Testimonios de clientes'],
+    category: 'Spa / Jacuzzi / Sauna',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=75',
+    description: 'Sitio web zen para spa premium con experiencias de jacuzzi, sauna, masajes y rituales de bienestar.',
+    demoUrl: '/demo/aura-zen',
+    features: ['Experiencias de jacuzzi y sauna', 'Rituales de bienestar', 'Reserva de sesiones online', 'Membresías exclusivas', 'Galería inmersiva'],
     animation: 'ekg',
   },
   {
@@ -77,6 +77,16 @@ const projects = [
     demoUrl: '/demo/ecommerce-admin',
     features: ['Dashboard de ventas en tiempo real', 'Gestión de productos e inventario', 'Analíticas y embudo de conversión', 'Gestión de clientes y segmentos', 'Alertas de stock automáticas'],
     animation: 'helix',
+  },
+  {
+    name: 'VitaSalud',
+    type: 'Landing Page',
+    category: 'Clínica Médica / Laboratorio',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&q=75',
+    description: 'Sitio web profesional para clínica médica con catálogo de exámenes de laboratorio, directorio de especialistas y sistema de citas.',
+    demoUrl: '/demo/clinica-medica',
+    features: ['Catálogo de exámenes de laboratorio', 'Agendar citas online', 'Directorio de especialistas', 'Resultados en línea', 'Emergencias 24 horas'],
+    animation: 'ekg',
   },
 ];
 
@@ -166,7 +176,7 @@ export default function Portfolio() {
     return () => ctx.revert();
   }, []);
 
-  const animations = [<HelixAnimation />, <GridAnimation />, <EKGAnimation />, <HelixAnimation />, <GridAnimation />, <EKGAnimation />, <HelixAnimation />];
+  const animations = [<HelixAnimation />, <GridAnimation />, <EKGAnimation />, <HelixAnimation />, <GridAnimation />, <EKGAnimation />, <HelixAnimation />, <EKGAnimation />];
 
   return (
     <section id="portfolio" ref={sectionRef} className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
@@ -176,17 +186,17 @@ export default function Portfolio() {
             <MayanCornerGlyph className="text-cyan-500 opacity-40" position="left" />
             <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-50 border border-cyan-100 text-cyan-700 text-sm font-medium rounded-full">
               <Eye className="w-3.5 h-3.5" />
-              Portafolio de Demos
+              Nuestro Trabajo
             </span>
             <MayanCornerGlyph className="text-cyan-500 opacity-40" position="right" />
           </div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 tracking-tight">
-            Ejemplos de Landing Pages{' '}
+            Diseño Web a la Medida{' '}
             <span className="font-serif italic text-gradient-cyan">en Honduras</span>
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            No te pedimos que imagines. Te mostramos. Explora demos interactivos
-            de landing pages listas para generar clientes.
+            Cada proyecto es único. Diseñamos desde cero para tu marca, tu audiencia
+            y tus objetivos. Nada de plantillas. Así se ve nuestro trabajo.
           </p>
         </div>
 
@@ -238,7 +248,7 @@ export default function Portfolio() {
                     to={project.demoUrl}
                     className="magnetic-btn inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-white font-semibold rounded-full transition-all duration-300 w-fit shadow-lg shadow-cyan-500/20 hover:shadow-cyan-400/30 group"
                   >
-                    Ver Demo Completo
+                    Ver Proyecto
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -249,12 +259,12 @@ export default function Portfolio() {
 
         <div className="text-center mt-16">
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50">
-            <p className="text-slate-700 font-medium">¿No ves tu rubro? Lo creamos a tu medida.</p>
+            <p className="text-slate-700 font-medium">¿Listo para el tuyo? Lo diseñamos a tu medida.</p>
             <button
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="magnetic-btn flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-white font-semibold rounded-full shadow-lg shadow-cyan-500/20"
             >
-              Quiero una Igual <ArrowRight className="w-4 h-4" />
+              Quiero el Mío <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

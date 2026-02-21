@@ -24,12 +24,12 @@ const recentOrders = [
 ];
 
 const topProducts = [
-  { name: 'iPhone 15 Pro Max', sku: 'IPH-15PM', price: 'L.28,500', sold: 94, stock: 23, revenue: 'L.2.6M', image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=100&q=80', trend: '+18%' },
-  { name: 'MacBook Air M3', sku: 'MBA-M3', price: 'L.32,800', sold: 67, stock: 12, revenue: 'L.2.1M', image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=100&q=80', trend: '+24%' },
-  { name: 'AirPods Pro 2', sku: 'APP-2', price: 'L.6,200', sold: 156, stock: 45, revenue: 'L.967K', image: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=100&q=80', trend: '+9%' },
-  { name: 'Samsung S24 Ultra', sku: 'SAM-S24U', price: 'L.26,900', sold: 52, stock: 31, revenue: 'L.1.3M', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=100&q=80', trend: '+31%' },
-  { name: 'iPad Pro M4', sku: 'IPD-PM4', price: 'L.19,500', sold: 41, stock: 8, revenue: 'L.799K', image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=100&q=80', trend: '+5%' },
-  { name: 'Sony WH-1000XM5', sku: 'SNY-XM5', price: 'L.8,400', sold: 89, stock: 56, revenue: 'L.747K', image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=100&q=80', trend: '+14%' },
+  { name: 'iPhone 15 Pro Max', sku: 'IPH-15PM', price: 'L.28,500', sold: 94, stock: 23, revenue: 'L.2.6M', image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=200&q=80', trend: '+18%' },
+  { name: 'MacBook Air M3', sku: 'MBA-M3', price: 'L.32,800', sold: 67, stock: 12, revenue: 'L.2.1M', image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=200&q=80', trend: '+24%' },
+  { name: 'AirPods Pro 2', sku: 'APP-2', price: 'L.6,200', sold: 156, stock: 45, revenue: 'L.967K', image: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=200&q=80', trend: '+9%' },
+  { name: 'Samsung S24 Ultra', sku: 'SAM-S24U', price: 'L.26,900', sold: 52, stock: 31, revenue: 'L.1.3M', image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=200&q=80', trend: '+31%' },
+  { name: 'iPad Pro M4', sku: 'IPD-PM4', price: 'L.19,500', sold: 41, stock: 8, revenue: 'L.799K', image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=200&q=80', trend: '+5%' },
+  { name: 'Sony WH-1000XM5', sku: 'SNY-XM5', price: 'L.8,400', sold: 89, stock: 56, revenue: 'L.747K', image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=200&q=80', trend: '+14%' },
 ];
 
 const inventoryAlerts = [

@@ -195,7 +195,7 @@ function CursorScheduler() {
 }
 
 const services = [
-  { title: 'Diseño Personalizado', desc: 'Tu marca, no una plantilla genérica. Destacas desde el primer segundo.', icon: Palette, accent: 'from-cyan-500 to-blue-500', bg: 'bg-cyan-50' },
+  { title: 'Diseño a tu Medida', desc: 'Diseño 100% original para tu marca. Nada de plantillas. Destacas desde el primer segundo.', icon: Palette, accent: 'from-cyan-500 to-blue-500', bg: 'bg-cyan-50' },
   { title: '100% Responsive', desc: 'El 78% de tus clientes te buscan desde el celular. Estamos listos.', icon: Smartphone, accent: 'from-blue-500 to-indigo-500', bg: 'bg-blue-50' },
   { title: 'SEO Optimizado', desc: 'Que te encuentren en Google cuando buscan lo que vendes.', icon: Search, accent: 'from-emerald-500 to-cyan-500', bg: 'bg-emerald-50' },
   { title: 'Velocidad Ultra-Rápida', desc: 'Cada segundo de carga lenta = 7% menos ventas. Cargamos en <2s.', icon: Zap, accent: 'from-amber-500 to-orange-500', bg: 'bg-amber-50' },

@@ -37,7 +37,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://balamcode.com/demo/estilo-salon</loc>
+    <loc>https://balamcode.com/demo/aura-zen</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://balamcode.com/demo/clinica-medica</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

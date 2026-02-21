@@ -14,23 +14,23 @@ const menuCategories = [
 ];
 
 const menuItems = [
-  { name: 'Espresso Hondureno', price: 'L.45', category: 'Cafe', image: 'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80', desc: 'Espresso intenso con granos de Marcala, cuerpo robusto y notas de chocolate', popular: true },
-  { name: 'Cappuccino Artesanal', price: 'L.65', category: 'Cafe', image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&q=80', desc: 'Cappuccino clasico con espuma de leche cremosa y arte latte', popular: false },
-  { name: 'Cheesecake de Maracuya', price: 'L.95', category: 'Postres', image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&q=80', desc: 'Cheesecake cremoso con coulis de maracuya fresca hondurena', popular: true },
-  { name: 'Latte de Vainilla', price: 'L.70', category: 'Cafe', image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80', desc: 'Latte suave con extracto natural de vainilla y leche vaporizada', popular: false },
-  { name: 'Brownie con Helado', price: 'L.110', category: 'Postres', image: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=400&q=80', desc: 'Brownie tibio de chocolate oscuro acompanado de helado artesanal', popular: false },
-  { name: 'Brunch Catracho', price: 'L.185', category: 'Brunch', image: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&q=80', desc: 'Huevos revueltos, baleada, platano frito, frijoles y cafe incluido', popular: true },
-  { name: 'Smoothie Tropical', price: 'L.75', category: 'Bebidas', image: 'https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400&q=80', desc: 'Mezcla de mango, pina, banano y leche de coco natural', popular: false },
-  { name: 'Te Chai Helado', price: 'L.60', category: 'Bebidas', image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80', desc: 'Te chai especiado con canela, cardamomo y jengibre sobre hielo', popular: false },
+  { name: 'Espresso Hondureno', price: 'L.45', category: 'Cafe', image: 'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=800&q=80', desc: 'Espresso intenso con granos de Marcala, cuerpo robusto y notas de chocolate', popular: true },
+  { name: 'Cappuccino Artesanal', price: 'L.65', category: 'Cafe', image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&q=80', desc: 'Cappuccino clasico con espuma de leche cremosa y arte latte', popular: false },
+  { name: 'Cheesecake de Maracuya', price: 'L.95', category: 'Postres', image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&q=80', desc: 'Cheesecake cremoso con coulis de maracuya fresca hondurena', popular: true },
+  { name: 'Latte de Vainilla', price: 'L.70', category: 'Cafe', image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80', desc: 'Latte suave con extracto natural de vainilla y leche vaporizada', popular: false },
+  { name: 'Brownie con Helado', price: 'L.110', category: 'Postres', image: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=800&q=80', desc: 'Brownie tibio de chocolate oscuro acompanado de helado artesanal', popular: false },
+  { name: 'Brunch Catracho', price: 'L.185', category: 'Brunch', image: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=800&q=80', desc: 'Huevos revueltos, baleada, platano frito, frijoles y cafe incluido', popular: true },
+  { name: 'Smoothie Tropical', price: 'L.75', category: 'Bebidas', image: 'https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=800&q=80', desc: 'Mezcla de mango, pina, banano y leche de coco natural', popular: false },
+  { name: 'Te Chai Helado', price: 'L.60', category: 'Bebidas', image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80', desc: 'Te chai especiado con canela, cardamomo y jengibre sobre hielo', popular: false },
 ];
 
 const galleryImages = [
-  'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80',
-  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80',
-  'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80',
-  'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&q=80',
-  'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&q=80',
-  'https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=400&q=80',
+  'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=80',
+  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
+  'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
+  'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80',
+  'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80',
+  'https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=800&q=80',
 ];
 
 const grainOverlay = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`;
@@ -92,13 +92,8 @@ export default function DemoCafeAroma() {
 
       <nav className="sticky top-10 z-40 flex flex-col" style={{ backgroundColor: 'rgba(255, 251, 235, 0.99)' }}>
         <div className="flex items-center justify-center py-5">
-          <Link to="/" className="text-center">
-            <span className="block text-3xl sm:text-4xl font-serif italic tracking-wide" style={{ color: '#78350F' }}>
-              Cafe Aroma
-            </span>
-            <span className="block text-[10px] uppercase tracking-[0.35em] mt-1 font-light" style={{ color: '#92400E' }}>
-              Cafe de Especialidad · Tegucigalpa
-            </span>
+          <Link to="/" className="flex justify-center">
+            <img src="/demos/cafe-aroma.png" alt="Café Aroma" className="h-14 w-auto" />
           </Link>
         </div>
         <div className="flex items-center justify-center gap-4 sm:gap-8 py-0 border-t border-b overflow-x-auto" style={{ borderColor: '#D4A574' }}>
@@ -365,7 +360,7 @@ export default function DemoCafeAroma() {
       <section id="historia" className="relative overflow-hidden" style={{ minHeight: '80vh' }}>
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1920&q=80"
             alt=""
             aria-hidden="true"
             width={1400}
@@ -652,7 +647,7 @@ export default function DemoCafeAroma() {
       <footer className="py-10" style={{ backgroundColor: '#3C1518' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
-            <span className="font-serif italic text-lg" style={{ color: '#FBBF24' }}>Cafe Aroma</span>
+            <img src="/demos/cafe-aroma.png" alt="Café Aroma" className="h-10 w-auto" />
             <p className="text-xs font-light mt-1" style={{ color: 'rgba(251, 191, 36, 0.5)' }}>
               &copy; 2025 — Todos los derechos reservados
             </p>
