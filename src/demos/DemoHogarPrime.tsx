@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Phone, MapPin, Search, Bed, Bath, Maximize, Heart, Home, Building, TreePine, ArrowRight, Shield, Users, Key, ChevronRight, Menu, X } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { WhatsAppIcon } from '../components/SocialIcons';
-import { BACLogo, FicohsaLogo, DaviviendaLogo, CemcolLogo, InversaLogo } from '../components/BrandLogos';
 import { useState, useRef, useEffect } from 'react';
 
 const filters = [
@@ -489,16 +488,13 @@ export default function DemoHogarPrime() {
         <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
           <p className="text-xs tracking-[0.3em] uppercase font-light text-slate-400 mb-4">Alianzas Estratégicas</p>
           <h3 className="font-serif text-2xl text-slate-900 mb-12">Instituciones que <em className="italic" style={{ color: '#D4A853' }}>respaldan</em> nuestro trabajo</h3>
-          <div className="flex flex-wrap justify-center gap-8 items-center">
+          <div className="flex flex-wrap justify-center gap-12 items-center">
             {[
-              { Logo: BACLogo, name: 'BAC' },
-              { Logo: FicohsaLogo, name: 'Ficohsa' },
-              { Logo: DaviviendaLogo, name: 'Davivienda' },
-              { Logo: CemcolLogo, name: 'Cemcol' },
-              { Logo: InversaLogo, name: 'Inversa' },
+              { src: '/brands/BAC_Credomatic_logo.svg.png', name: 'BAC' },
+              { src: '/brands/Ficohsa_logo.png', name: 'Ficohsa' },
             ].map(brand => (
               <div key={brand.name} className="group flex items-center justify-center">
-                <brand.Logo className="h-9 opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
+                <img src={brand.src} alt={brand.name} className="h-10 opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
               </div>
             ))}
           </div>

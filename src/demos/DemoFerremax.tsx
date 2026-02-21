@@ -3,7 +3,6 @@ import { Phone, MapPin, Search, ShoppingCart, Star, Truck, Shield, Clock, Tag, C
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { WhatsAppIcon, FacebookIcon, InstagramIcon, TikTokIcon, GoogleMapsIcon } from '../components/SocialIcons';
-import { DeWaltLogo, BoschLogo, StanleyLogo, TruperLogo, ThreeMlogo, CoronaLogo } from '../components/BrandLogos';
 
 const categories = [
   { name: 'Todos', icon: Package, count: 8 },
@@ -26,12 +25,9 @@ const products = [
 ];
 
 const brandLogos = [
-  { name: 'DeWalt', Logo: DeWaltLogo },
-  { name: 'Bosch', Logo: BoschLogo },
-  { name: 'Stanley', Logo: StanleyLogo },
-  { name: 'Truper', Logo: TruperLogo },
-  { name: '3M', Logo: ThreeMlogo },
-  { name: 'Corona', Logo: CoronaLogo },
+  { name: 'DeWalt', src: '/brands/dewalt-4-logo.svg' },
+  { name: 'Stanley', src: '/brands/stanley-thumb.png' },
+  { name: 'Makita', src: '/brands/Makita_Logo.svg.png' },
 ];
 
 const cautionStripe = 'repeating-linear-gradient(135deg, #EAB308 0px, #EAB308 10px, #171717 10px, #171717 20px)';
@@ -329,24 +325,21 @@ export default function DemoFerremax() {
             <span className="font-mono text-yellow-500 text-xs uppercase tracking-[0.3em]">Aliados</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-10">MARCAS QUE VENDEMOS</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-0">
-            {brandLogos.map((brand, i) => {
-              const LogoComponent = brand.Logo;
-              return (
-                <motion.div
-                  key={brand.name}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="border-2 border-neutral-800 p-6 flex items-center justify-center hover:border-yellow-500 hover:bg-neutral-800/30 transition-colors group"
-                >
-                  <div className="opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0">
-                    <LogoComponent className="h-8 w-auto" />
-                  </div>
-                </motion.div>
-              );
-            })}
+          <div className="grid grid-cols-3 gap-0">
+            {brandLogos.map((brand, i) => (
+              <motion.div
+                key={brand.name}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="border-2 border-neutral-800 p-6 flex items-center justify-center hover:border-yellow-500 hover:bg-neutral-800/30 transition-colors group"
+              >
+                <div className="opacity-60 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0">
+                  <img src={brand.src} alt={brand.name} className="h-8 w-auto invert" />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Phone, MapPin, Clock, Users, Dumbbell, Flame, Zap, CheckCircle, Calendar, Trophy, Home, CreditCard, Mail } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { WhatsAppIcon } from '../components/SocialIcons';
-import { NikeLogo, AdidasLogo, UnderArmourLogo, ReebokLogo, PumaLogo } from '../components/BrandLogos';
 import { useRef, useState, useEffect } from 'react';
 
 const classes = [
@@ -336,16 +335,15 @@ export default function DemoFitZone() {
       <section className="py-10 bg-[#0A0A0A]">
         <div className="max-w-5xl mx-auto px-4 lg:pl-24">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-zinc-600 text-center mb-8">Marcas que nos respaldan</p>
-          <div className="flex flex-wrap justify-center gap-6 items-center">
+          <div className="flex flex-wrap justify-center gap-10 items-center">
             {[
-              { Logo: NikeLogo, name: 'Nike' },
-              { Logo: AdidasLogo, name: 'Adidas' },
-              { Logo: UnderArmourLogo, name: 'Under Armour' },
-              { Logo: ReebokLogo, name: 'Reebok' },
-              { Logo: PumaLogo, name: 'Puma' },
+              { src: '/brands/Logo_NIKE.svg', name: 'Nike' },
+              { src: '/brands/Adidas_Logo.svg', name: 'Adidas' },
+              { src: '/brands/puma-logo-logo.svg', name: 'Puma' },
+              { src: '/brands/oakley.svg', name: 'Oakley' },
             ].map(brand => (
               <div key={brand.name} className="group flex items-center justify-center">
-                <brand.Logo className="h-8 opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300" />
+                <img src={brand.src} alt={brand.name} className="h-8 opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 invert" />
               </div>
             ))}
           </div>

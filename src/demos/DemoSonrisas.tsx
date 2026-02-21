@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Phone, MapPin, Clock, Star, ChevronLeft, ChevronRight, Shield, Sparkles, Heart, ArrowRight, Calendar, Menu, X, Award, Users, CheckCircle, Smile } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { WhatsAppIcon, FacebookIcon, InstagramIcon, GoogleMapsIcon } from '../components/SocialIcons';
-import { ColgateLogo, OralBLogo, PhilipsLogo, DentsplyLogo, ThreeMlogo, IvoclarLogo } from '../components/BrandLogos';
 import { useRef, useState, useEffect } from 'react';
 
 const services = [
@@ -331,14 +330,11 @@ export default function DemoSonrisas() {
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-light tracking-[0.15em] uppercase text-slate-400 mb-8">Trabajamos con las mejores marcas</p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
+          <div className="grid grid-cols-3 gap-8 items-center justify-items-center">
             {[
-              { Logo: ColgateLogo, name: 'Colgate' },
-              { Logo: OralBLogo, name: 'Oral-B' },
-              { Logo: PhilipsLogo, name: 'Philips' },
-              { Logo: DentsplyLogo, name: 'Dentsply' },
-              { Logo: ThreeMlogo, name: '3M' },
-              { Logo: IvoclarLogo, name: 'Ivoclar' },
+              { src: '/brands/colgate-logo-1.svg', name: 'Colgate' },
+              { src: '/brands/Oral-B_logo.svg.png', name: 'Oral-B' },
+              { src: '/brands/Listerine_logo.svg', name: 'Listerine' },
             ].map((brand, i) => (
               <motion.div
                 key={brand.name}
@@ -348,7 +344,7 @@ export default function DemoSonrisas() {
                 transition={{ delay: i * 0.05 }}
                 className="group flex items-center justify-center"
               >
-                <brand.Logo className="h-8 opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
+                <img src={brand.src} alt={brand.name} className="h-8 opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500" />
               </motion.div>
             ))}
           </div>
